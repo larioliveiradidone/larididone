@@ -127,6 +127,58 @@ section h2 {
   content: "\2013\A0";
 }
 
+.job {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--accent);
+  margin-bottom: 2.5rem;
+}
+
+.job::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 0.35rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.job:last-child {
+  margin-bottom: 0;
+}
+
+.job h3 {
+  margin: 0 0 0.25rem;
+}
+
+.job-meta {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.job-dates {
+  margin: 0.15rem 0 0.9rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.75;
+}
+
+.job-points {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.job-points li {
+  margin-bottom: 0.5rem;
+}
+
+.job-points li:last-child {
+  margin-bottom: 0;
+}
+
 .project {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
