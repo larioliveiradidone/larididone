@@ -12,6 +12,7 @@ Guia deste projeto, escrito para quem está fazendo um site de ponta a ponta pel
 | Deixar o código organizado                   | Só salvar com ⌘S (automático). Ou `npm run format`                                                      |
 | Mudar uma cor, tamanho de texto ou espaço    | `css/tokens.css`: é o único lugar onde esses valores vivem                                              |
 | Saber onde o site difere do Figma, e por quê | [docs/design-vs-codigo.md](docs/design-vs-codigo.md)                                                    |
+| Ver o que já foi decidido, e o que falta     | [docs/decisoes.md](docs/decisoes.md)                                                                    |
 | Salvar uma versão do trabalho                | Seção 6 (Git)                                                                                           |
 
 > **Importante:** abra a pasta `larididone` no VS Code (não a pasta `codes`). É ela que carrega as configurações deste projeto (`.vscode/`).
@@ -64,6 +65,7 @@ Marque aqui conforme avançar.
 
 **Onde ler mais:**
 
+- [docs/decisoes.md](docs/decisoes.md): o registro das decisões do projeto (o que, quando, por quê e onde), os padrões adotados e as pendências.
 - [docs/revisao-do-design.md](docs/revisao-do-design.md): o que o design tem, tokens, contraste medido e o que ajustar no Figma.
 - [docs/design-vs-codigo.md](docs/design-vs-codigo.md): cada diferença entre o Figma e o código, com o motivo, e como mantê-los alinhados.
 - [docs/responsivo.md](docs/responsivo.md): como o site se adapta a telas pequenas (proposta aguardando aprovação).
@@ -191,6 +193,7 @@ larididone/
 │   ├── icons/               ← ícones exportados do Figma
 │   └── pattern-dots.svg     ← fundo pontilhado
 ├── docs/
+│   ├── decisoes.md          ← registro das decisões do projeto e das pendências
 │   ├── revisao-do-design.md ← revisão do Figma: tokens, contraste, ajustes
 │   ├── design-vs-codigo.md  ← onde e por que o código difere do Figma
 │   ├── responsivo.md        ← proposta para telas pequenas
