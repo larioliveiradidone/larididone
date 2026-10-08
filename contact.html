@@ -1,40 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — Lari Didone</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <div class="header-inner">
-      <a class="home-link" href="index.html">Lari Didone</a>
-      <nav>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact — Lari Didone</title>
+    <meta
+      name="description"
+      content="Contact Lari Didone: have a product challenge, a team to grow, or a question about design?"
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/space-grotesk-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
-  <main>
-    <div class="container">
-      <section>
-        <h2>Contact</h2>
-        <p>Feel free to reach out through any of these:</p>
-        <ul class="contact-list">
-          <li><a href="mailto:larissadidone@gmail.com">larissadidone@gmail.com</a></li>
-          <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+    <header class="site-header">
+      <nav class="nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="tab tab--smile" href="index.html">Hi, I’m Lari</a></li>
+          <li><a class="tab tab--clap" href="projects.html">Projects</a></li>
+          <li><a class="tab tab--smile" href="about.html">About</a></li>
+          <li>
+            <a class="tab tab--chat" href="contact.html" aria-current="page">Contact</a>
+          </li>
         </ul>
-      </section>
-    </div>
-  </main>
+      </nav>
+    </header>
 
-  <footer>
-    <div class="container">
-      &copy; 2026 Lari Didone
-    </div>
-  </footer>
-</body>
+    <main id="main">
+      <div class="panel">
+        <h1 class="page-title">Contact</h1>
+
+        <section class="row">
+          <h2 class="row__label">Let’s talk</h2>
+          <div class="stack">
+            <p class="text-lead">
+              Have a product challenge, a team to grow, or a question about design? I’d love to hear
+              from you.
+            </p>
+            <p class="text-muted">Tell me a little about what you have in mind.</p>
+          </div>
+        </section>
+
+        <section class="row">
+          <h2 class="row__label" id="form-heading">Your message</h2>
+          <!-- Formulário SEM função por enquanto: veja js/contact-form.js. -->
+          <form class="form" id="contact-form" aria-labelledby="form-heading">
+            <div class="field">
+              <label for="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                placeholder="Your name"
+              />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+              />
+            </div>
+            <div class="field">
+              <label for="subject">Subject</label>
+              <input
+                id="subject"
+                name="subject"
+                type="text"
+                placeholder="What would you like to talk about?"
+              />
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                aria-describedby="message-hint"
+                placeholder="A little context goes a long way…"
+              ></textarea>
+            </div>
+            <p class="text-note" id="message-hint">
+              Please don’t include sensitive or confidential information.
+            </p>
+            <button class="button" type="submit">
+              Send message <span aria-hidden="true">↗</span>
+            </button>
+            <p class="text-note" id="form-status" role="status">
+              Form layout preview — submission is not connected.
+            </p>
+          </form>
+        </section>
+
+        <section class="row">
+          <h2 class="row__label">Elsewhere</h2>
+          <div class="stack">
+            <p class="text-large">Prefer to connect professionally?</p>
+            <p>
+              <!-- TODO: trocar pelo endereço real do perfil no LinkedIn. -->
+              <a class="link-large" href="https://www.linkedin.com/"
+                >My LinkedIn Profile <span aria-hidden="true">↗</span></a
+              >
+            </p>
+            <p class="text-muted">I speak Portuguese, English and intermediate Dutch.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>2026 Lari Didone</p>
+        <p>Designed on Figma - Coded in VS Code with Claude AI Support</p>
+      </div>
+    </footer>
+
+    <script src="js/contact-form.js" defer></script>
+  </body>
 </html>

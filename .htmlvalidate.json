@@ -1,3 +1,6 @@
 {
-  "extends": ["html-validate:recommended"]
+  "extends": ["html-validate:recommended", "html-validate:prettier"],
+  "rules": {
+    "no-redundant-role": ["error", { "exclude": ["list"] }]
+  }
 }

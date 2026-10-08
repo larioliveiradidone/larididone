@@ -1,52 +1,172 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects — Lari Didone</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <div class="header-inner">
-      <a class="home-link" href="index.html">Lari Didone</a>
-      <nav>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects — Lari Didone</title>
+    <meta
+      name="description"
+      content="Projects by Lari Didone: a space for product design, systems and thoughtful collaboration."
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/space-grotesk-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="tab tab--smile" href="index.html">Hi, I’m Lari</a></li>
+          <li>
+            <a class="tab tab--clap" href="projects.html" aria-current="page">Projects</a>
+          </li>
+          <li><a class="tab tab--smile" href="about.html">About</a></li>
+          <li><a class="tab tab--chat" href="contact.html">Contact</a></li>
+        </ul>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <main>
-    <div class="container">
-      <section>
-        <h2>Projects</h2>
-
-        <div class="project">
-          <h3>Project One</h3>
-          <p>A short description of what this project is and what it does.</p>
-          <p><a href="#">View project</a></p>
+    <main id="main">
+      <div class="panel panel--tight">
+        <div class="stack stack--4">
+          <h1 class="page-title">Projects</h1>
+          <div class="stack stack--1">
+            <p class="text-lead">
+              A space for product design, systems and thoughtful collaboration.
+            </p>
+            <!-- Nota do Figma: remover antes de publicar. -->
+            <p class="text-note">
+              Sample project cards — replace these concepts with your own case studies.
+            </p>
+          </div>
         </div>
 
-        <div class="project">
-          <h3>Project Two</h3>
-          <p>A short description of what this project is and what it does.</p>
-          <p><a href="#">View project</a></p>
+        <div class="cards">
+          <!-- TODO: cada href="#" vira o endereço da página do estudo de caso. -->
+          <article class="card">
+            <svg class="card__art" viewBox="0 0 280 164" aria-hidden="true" focusable="false">
+              <use href="#art-cards" />
+            </svg>
+            <p class="card__type">01 / PRODUCT DESIGN</p>
+            <h2 class="card__title">A clearer checkout</h2>
+            <p class="card__text">
+              A sample commerce concept focused on a simpler path from choosing to purchasing.
+            </p>
+            <a class="card__link" href="#"
+              >View case study<span class="visually-hidden">: A clearer checkout</span>
+              <span aria-hidden="true">↗</span></a
+            >
+            <p class="card__note">Illustrative concept</p>
+          </article>
+
+          <article class="card">
+            <svg
+              class="card__art card__art--accent"
+              viewBox="0 0 280 164"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <use href="#art-rows" />
+            </svg>
+            <p class="card__type">02 / DESIGN SYSTEMS</p>
+            <h2 class="card__title">A flexible design system</h2>
+            <p class="card__text">
+              A sample component library exploring consistent patterns across a growing product.
+            </p>
+            <a class="card__link" href="#"
+              >View case study<span class="visually-hidden">: A flexible design system</span>
+              <span aria-hidden="true">↗</span></a
+            >
+            <p class="card__note">Illustrative concept</p>
+          </article>
+
+          <article class="card">
+            <svg
+              class="card__art card__art--surface"
+              viewBox="0 0 280 164"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <use href="#art-cards" />
+            </svg>
+            <p class="card__type">03 / PRODUCT STRATEGY</p>
+            <h2 class="card__title">A better onboarding</h2>
+            <p class="card__text">
+              A sample first-use experience that introduces a product one meaningful step at a time.
+            </p>
+            <a class="card__link" href="#"
+              >View case study<span class="visually-hidden">: A better onboarding</span>
+              <span aria-hidden="true">↗</span></a
+            >
+            <p class="card__note">Illustrative concept</p>
+          </article>
+
+          <article class="card">
+            <svg class="card__art" viewBox="0 0 280 164" aria-hidden="true" focusable="false">
+              <use href="#art-rows" />
+            </svg>
+            <p class="card__type">04 / INTERFACE DESIGN</p>
+            <h2 class="card__title">A calmer dashboard</h2>
+            <p class="card__text">
+              A sample workspace bringing key information and everyday actions into clearer focus.
+            </p>
+            <a class="card__link" href="#"
+              >View case study<span class="visually-hidden">: A calmer dashboard</span>
+              <span aria-hidden="true">↗</span></a
+            >
+            <p class="card__note">Illustrative concept</p>
+          </article>
         </div>
 
-        <div class="project">
-          <h3>Project Three</h3>
-          <p>A short description of what this project is and what it does.</p>
-          <p><a href="#">View project</a></p>
-        </div>
-      </section>
-    </div>
-  </main>
+        <section class="row">
+          <h2 class="row__label">Have something<br />in mind?</h2>
+          <div class="stack">
+            <p class="text-large">Let’s talk about your next product challenge.</p>
+            <p>
+              <a class="link-large" href="contact.html"
+                >Get in touch <span aria-hidden="true">↗</span></a
+              >
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
 
-  <footer>
-    <div class="container">
-      &copy; 2026 Lari Didone
-    </div>
-  </footer>
-</body>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>2026 Lari Didone</p>
+        <p>Designed on Figma - Coded in VS Code with Claude AI Support</p>
+      </div>
+    </footer>
+
+    <!-- Ilustrações dos cartões (decorativas), desenhadas com as formas do Figma -->
+    <svg class="svg-sprite" aria-hidden="true" focusable="false">
+      <symbol id="art-cards" viewBox="0 0 280 164">
+        <rect class="art-panel" x="22" y="25" width="236" height="118" rx="3" />
+        <rect class="art-rail" x="30" y="33" width="38" height="102" rx="2" />
+        <rect class="art-heading" x="78" y="38" width="96" height="7" rx="2" />
+        <rect class="art-line" x="78" y="54" width="150" height="4" rx="2" />
+        <rect class="art-mint" x="78" y="70" width="76" height="48" rx="2" />
+        <rect class="art-pink" x="161" y="70" width="76" height="48" rx="2" />
+        <rect class="art-action" x="170" y="124" width="67" height="8" rx="2" />
+      </symbol>
+      <symbol id="art-rows" viewBox="0 0 280 164">
+        <rect class="art-panel" x="22" y="25" width="236" height="118" rx="3" />
+        <rect class="art-rail" x="30" y="33" width="38" height="102" rx="2" />
+        <rect class="art-heading" x="78" y="38" width="96" height="7" rx="2" />
+        <rect class="art-line" x="78" y="54" width="150" height="4" rx="2" />
+        <rect class="art-row" x="78" y="70" width="159" height="11" rx="2" />
+        <rect class="art-pink" x="78" y="88" width="159" height="11" rx="2" />
+        <rect class="art-row" x="78" y="106" width="159" height="11" rx="2" />
+      </symbol>
+    </svg>
+  </body>
 </html>
