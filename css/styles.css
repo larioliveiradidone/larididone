@@ -133,12 +133,10 @@ a:hover {
   justify-content: center;
 }
 
-/* Barra de navegação (componente Nav do Figma) */
+/* Barra de navegação (componente Nav do Figma). Largura, margens e borda mudam
+   conforme o tamanho da tela: veja os blocos @media mais abaixo. */
 .nav {
-  width: 100%;
-  padding: var(--space-2);
   background: var(--color-bg-primary);
-  border-bottom: 1px solid var(--color-surface-primary);
 }
 
 .nav__list {
@@ -146,11 +144,6 @@ a:hover {
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--space-2);
-}
-
-/* Celular: 2 abas por linha */
-.nav__list li {
-  flex: 1 1 calc(50% - var(--space-2));
 }
 
 /* Aba de navegação (componente NavTab do Figma) */
@@ -167,10 +160,6 @@ a:hover {
   font-weight: 400;
   line-height: 1.75rem;
   text-decoration: none;
-}
-
-.nav .tab {
-  width: 100%;
 }
 
 /* Ícone de 24×24px à esquerda do texto. Os SVGs vêm do Figma; posição e tamanho
@@ -577,10 +566,95 @@ main {
   background: var(--indigo-700); /* ≠ FIGMA: hover do botão ainda não foi desenhado */
 }
 
-/* Modo de alto contraste do Windows: sem fundo colorido, o botão precisa de uma borda */
+/* Modo de alto contraste do Windows: sem fundo colorido, o botão precisa de uma borda,
+   e a aba da página atual ganha um sublinhado (o fundo e a barra colorida somem) */
 @media (forced-colors: active) {
   .button {
     border: 1px solid ButtonText;
+  }
+
+  .nav .tab[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+}
+
+/* ============================================================
+   NAVEGAÇÃO EM TELAS PEQUENAS (menos de 640px)
+   PROPOSTA: ainda não existe no Figma (veja docs/responsivo.md).
+   Quatro abas iguais, com o ícone sobre o rótulo, numa faixa no topo.
+   ============================================================ */
+@media (width < 40em) {
+  .nav {
+    width: 100%;
+    border-bottom: 1px solid var(--color-surface-primary);
+  }
+
+  .nav__list {
+    gap: 0;
+  }
+
+  .nav__list li {
+    flex: 1 1 0;
+    /* com texto grande as abas passam para outra linha em vez de estourar a tela */
+    min-width: min-content;
+  }
+
+  .nav .tab {
+    flex-direction: column;
+    gap: var(--space-1);
+    width: 100%;
+    min-height: 4rem;
+    padding: var(--space-2) var(--space-1);
+    font-size: 0.8125rem; /* 13px */
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  /* Página atual: fundo lavanda + barra no topo + texto pesado + ícone preenchido */
+  .nav .tab[aria-current="page"] {
+    background: var(--color-bg-secondary);
+    box-shadow: inset 0 3px 0 var(--pink-purple-500);
+  }
+
+  /* O anel de foco fica por dentro da aba, para não invadir as vizinhas */
+  .nav .tab:focus-visible {
+    outline-offset: -4px;
+  }
+
+  /* Texto muito grande (veja js/text-size.js): as abas ficam em 2×2 */
+  html[data-big-text] .nav__list li {
+    flex-basis: 45%;
+  }
+}
+
+/* "Dock" flutuante no rodapé da tela, ao alcance do polegar.
+   Só aparece se a janela for larga (320px ou mais) e alta (480px ou mais) o bastante.
+   Medido em "em": quem aumenta o tamanho da fonte no navegador, ou dá muito zoom, volta
+   para a faixa no topo, que rola junto com a página e nunca cobre o conteúdo.
+   O mesmo vale quando o texto está muito grande (html[data-big-text], veja js/text-size.js).
+   A ordem do Tab continua a do HTML (a navegação vem primeiro), mesmo ficando embaixo. */
+@media (20em <= width < 40em) and (height >= 30em) {
+  html:not([data-big-text]) .site-header {
+    position: fixed;
+    inset: auto var(--space-3) var(--space-3); /* colada embaixo, com 12px de margem */
+    z-index: 10;
+  }
+
+  html:not([data-big-text]) .nav {
+    border: 1px solid var(--color-surface-primary);
+    border-radius: 0.5rem; /* o mesmo raio da barra de desktop */
+    overflow: hidden; /* a aba da página atual acompanha os cantos arredondados */
+  }
+
+  /* Deixa espaço para o conteúdo não ficar escondido atrás da dock, e para o foco do
+     teclado nunca parar embaixo dela (WCAG 2.4.11) */
+  html:not([data-big-text]) {
+    scroll-padding-bottom: 6rem;
+  }
+
+  html:not([data-big-text]) body {
+    padding-block: var(--space-4) 6rem;
   }
 }
 

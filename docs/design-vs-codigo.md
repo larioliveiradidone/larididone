@@ -72,7 +72,7 @@ Em todos estes casos o Figma tinha duas versões ou um detalhe que parece aciden
 
 ## 5. O que o Figma ainda não tem (e eu improvisei)
 
-- **Mobile e tablet:** proposta completa em [responsivo.md](responsivo.md).
+- **Mobile e tablet:** proposta completa em [responsivo.md](responsivo.md). O **menu do celular** é uma dock flutuante no rodapé da tela (escolha sua, 08/10), com uma faixa no topo como reserva para janelas baixas e texto muito grande. Existe um pequeno script para isso (`js/text-size.js`).
 - **Estados:** foco, hover de botão e link, erro e sucesso do formulário.
 - **Mensagem ao enviar o formulário:** "This form isn’t connected yet, so nothing was sent."
 - **Título e descrição** de cada página (`<title>`, `<meta description>`), escritos a partir dos textos do Figma.

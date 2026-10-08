@@ -96,14 +96,14 @@ A cor `#d946b0` é usada em: abas inativas da navegação (18px), "View case stu
 
 ## 4. Ajustes no Figma, em ordem de importância
 
-| #   | Ajuste                     | No código     | No Figma | Detalhe                                                                                                                                                                 |
-| --- | -------------------------- | ------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | **Cor dos links**          | ✅            | ⏳       | Trocar `color/text/link` para `#a31585` (`pink-purple/500`): 6,57:1 e 5,65:1. Dá para manter `#d946b0` em elementos decorativos                                         |
-| 2   | **Borda dos campos**       | ✅            | ⏳       | Criar `color/border/input` = `mint/600` `#17847a` (4,27:1) e aplicar nos 4 campos. _(WCAG 1.4.11)_                                                                      |
-| 3   | **Estado de foco**         | ✅            | ⏳       | Contorno de 2px em `indigo/500`, com 2px de afastamento, em abas, links, campos e botão. _(WCAG 2.4.7)_                                                                 |
-| 4   | **Versão mobile e tablet** | ✅ (proposta) | ⏳       | Só existe 1440px. A proposta já está no código e aguarda sua aprovação: [responsivo.md](responsivo.md). _(WCAG 1.4.10)_                                                 |
-| 5   | **Tamanho do texto**       | não           | ⏳       | O corpo é 14px SemiBold e há rótulos de 12px. O código **manteve** o Figma (em `rem`). Subir o corpo para 16px é recomendável, não é exigência da WCAG: **decisão sua** |
-| 6   | **Estados que faltam**     | em parte      | ⏳       | No código: hover do botão (fundo `indigo/700`) e sublinhado nos links de texto. Ainda sem desenho: pressionado, desabilitado, erro e sucesso do formulário              |
+| #   | Ajuste                     | No código     | No Figma | Detalhe                                                                                                                                                                                         |
+| --- | -------------------------- | ------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | **Cor dos links**          | ✅            | ⏳       | Trocar `color/text/link` para `#a31585` (`pink-purple/500`): 6,57:1 e 5,65:1. Dá para manter `#d946b0` em elementos decorativos                                                                 |
+| 2   | **Borda dos campos**       | ✅            | ⏳       | Criar `color/border/input` = `mint/600` `#17847a` (4,27:1) e aplicar nos 4 campos. _(WCAG 1.4.11)_                                                                                              |
+| 3   | **Estado de foco**         | ✅            | ⏳       | Contorno de 2px em `indigo/500`, com 2px de afastamento, em abas, links, campos e botão. _(WCAG 2.4.7)_                                                                                         |
+| 4   | **Versão mobile e tablet** | ✅ (proposta) | ⏳       | Só existe 1440px. A proposta já está no código: o menu do celular é uma **dock flutuante** (decidido por você) e o resto aguarda sua aprovação: [responsivo.md](responsivo.md). _(WCAG 1.4.10)_ |
+| 5   | **Tamanho do texto**       | não           | ⏳       | O corpo é 14px SemiBold e há rótulos de 12px. O código **manteve** o Figma (em `rem`). Subir o corpo para 16px é recomendável, não é exigência da WCAG: **decisão sua**                         |
+| 6   | **Estados que faltam**     | em parte      | ⏳       | No código: hover do botão (fundo `indigo/700`) e sublinhado nos links de texto. Ainda sem desenho: pressionado, desabilitado, erro e sucesso do formulário                                      |
 
 ## 5. Decisões
 
@@ -117,7 +117,8 @@ A cor `#d946b0` é usada em: abas inativas da navegação (18px), "View case stu
 | Texto final da Home                      | ⏳ Usei o da página ("Hello, I’m Lari. I lead designers through change…"), não o da variante "Welcome, I’m Lari…". Me avise se for o outro             |
 | Cases                                    | ⏳ Os 4 cards são exemplos ("Sample project cards — replace these"). Quais projetos reais entram, e cada um terá uma página própria?                   |
 | Tamanho do texto do corpo (14px × 16px)  | ⏳ Veja o item 5 da seção 4                                                                                                                            |
-| Redimensionamento (celular e tablet)     | ⏳ Proposta pronta, aguardando sua aprovação: [responsivo.md](responsivo.md)                                                                           |
+| Menu do celular                          | ✅ **Dock flutuante** no rodapé da tela (opção B, decidido em 08/10), com faixa no topo como reserva: [responsivo.md](responsivo.md)                   |
+| Redimensionamento (resto)                | ⏳ Proposta pronta, aguardando sua aprovação: [responsivo.md](responsivo.md)                                                                           |
 
 ## 6. Pequenas inconsistências encontradas
 
