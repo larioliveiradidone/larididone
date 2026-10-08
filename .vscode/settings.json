@@ -1,0 +1,14 @@
+{
+  // Ao salvar (⌘S), o Prettier arruma a indentação e o estilo do código sozinho.
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+
+  // Ao renomear uma tag de abertura (<div>), a de fechamento muda junto.
+  "editor.linkedEditing": true,
+
+  "files.insertFinalNewline": true,
+
+  // Este projeto não usa Stylelint: o VS Code já valida o CSS sozinho.
+  "stylelint.enable": false
+}

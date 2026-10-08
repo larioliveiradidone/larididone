@@ -1,0 +1,10 @@
+{
+  // Extensões que o VS Code vai sugerir instalar ao abrir este projeto em outro computador.
+  "recommendations": [
+    "ritwickdey.liveserver",
+    "esbenp.prettier-vscode",
+    "deque-systems.vscode-axe-linter",
+    "ecmel.vscode-html-css",
+    "figma.figma-vscode-extension"
+  ]
+}

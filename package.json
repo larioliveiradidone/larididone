@@ -1,0 +1,22 @@
+{
+  "name": "larididone",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Portfólio da Lari Didone: HTML, CSS e o mínimo de JavaScript, com acessibilidade em primeiro lugar.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "run-s --continue-on-error check:html check:a11y",
+    "check:html": "html-validate \"*.html\"",
+    "check:a11y": "node scripts/a11y.mjs",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "axe-core": "^4.14.0",
+    "html-validate": "^11.16.2",
+    "npm-run-all2": "^9.0.3",
+    "prettier": "^3.9.9",
+    "puppeteer-core": "^25.12.0"
+  }
+}

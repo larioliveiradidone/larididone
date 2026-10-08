@@ -1,0 +1,7 @@
+# Pacotes baixados pelo npm: pesados e recriáveis com `npm install`. Nunca vão pro Git.
+node_modules/
+
+# Lixo automático do macOS
+.DS_Store
+
+*.log
