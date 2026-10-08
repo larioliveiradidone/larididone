@@ -8,20 +8,20 @@
 
 Comparei o render do Figma (tamanho real, 1×) com o site no Chrome, medindo as caixas pixel a pixel pela cor das bordas.
 
-| Elemento                         | Figma             | Código            | Diferença | Explicação                                                                      |
-| -------------------------------- | ----------------- | ----------------- | --------- | ------------------------------------------------------------------------------- |
-| Janela da Home                   | 700×217, (370,314)| idêntico          | **0**     |                                                                                 |
-| Fundo pontilhado                 | tile 16×8, pontos 2×2 a 38% | idêntico | **0**    | Medi as cores dos pixels do Figma. A imagem de diferença fica preta no fundo    |
-| Cartões de projeto (4)           | 314×486           | idêntico          | **0**     | Posições nas colunas também idênticas                                           |
-| Painel Projects                  | 686×1314          | 686×1314          | **0**     |                                                                                 |
-| Painel Contact                   | 686×1058          | 686×1058          | **0**     |                                                                                 |
-| Campos do formulário (4)         | 475×52 e 475×156  | idêntico          | **0**     |                                                                                 |
-| Painel About                     | 686×1057          | 686×1001          | **−56px** | −40: sobra uma linha vazia de 36px na grade de "Skills" no Figma. −16: o rótulo "Relevant Links" está com 22px no Figma e quebra em 2 linhas; usei o estilo H2 (20px) |
-| Botão "Send message"             | 177×52            | 153×52            | −24px     | No Figma o texto tem uma moldura fixa de 153px; no código o botão acompanha o texto |
-| Largura da navegação             | 602               | 596               | −6px      | O Figma tem espaço duplo em "Hi,  I’m Lari"; o HTML recolhe para um espaço       |
-| Altura da navegação (Projects e Contact) | 94        | 78                | −16px     | Nessas duas páginas o Figma usa 24px de padding vertical; o componente `Nav` usa 16px. Usei o do componente em todas |
-| Altura total da página Contact   | 1500              | 1293              | −207px    | −16 (navegação) −45 (o Figma usa outra versão do rodapé, mais alta) −146 (o frame tem altura fixa com espaço vazio embaixo) |
-| Altura total (Home / About / Projects) | 828 / 1292 / 1565 | 828 / 1236 / 1549 | 0 / −56 / −16 | As mesmas causas acima                                                  |
+| Elemento                                 | Figma                       | Código            | Diferença     | Explicação                                                                                                                                                            |
+| ---------------------------------------- | --------------------------- | ----------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Janela da Home                           | 700×217, (370,314)          | idêntico          | **0**         |                                                                                                                                                                       |
+| Fundo pontilhado                         | tile 16×8, pontos 2×2 a 38% | idêntico          | **0**         | Medi as cores dos pixels do Figma. A imagem de diferença fica preta no fundo                                                                                          |
+| Cartões de projeto (4)                   | 314×486                     | idêntico          | **0**         | Posições nas colunas também idênticas                                                                                                                                 |
+| Painel Projects                          | 686×1314                    | 686×1314          | **0**         |                                                                                                                                                                       |
+| Painel Contact                           | 686×1058                    | 686×1058          | **0**         |                                                                                                                                                                       |
+| Campos do formulário (4)                 | 475×52 e 475×156            | idêntico          | **0**         |                                                                                                                                                                       |
+| Painel About                             | 686×1057                    | 686×1001          | **−56px**     | −40: sobra uma linha vazia de 36px na grade de "Skills" no Figma. −16: o rótulo "Relevant Links" está com 22px no Figma e quebra em 2 linhas; usei o estilo H2 (20px) |
+| Botão "Send message"                     | 177×52                      | 153×52            | −24px         | No Figma o texto tem uma moldura fixa de 153px; no código o botão acompanha o texto                                                                                   |
+| Largura da navegação                     | 602                         | 596               | −6px          | O Figma tem espaço duplo em "Hi, I’m Lari"; o HTML recolhe para um espaço                                                                                             |
+| Altura da navegação (Projects e Contact) | 94                          | 78                | −16px         | Nessas duas páginas o Figma usa 24px de padding vertical; o componente `Nav` usa 16px. Usei o do componente em todas                                                  |
+| Altura total da página Contact           | 1500                        | 1293              | −207px        | −16 (navegação) −45 (o Figma usa outra versão do rodapé, mais alta) −146 (o frame tem altura fixa com espaço vazio embaixo)                                           |
+| Altura total (Home / About / Projects)   | 828 / 1292 / 1565           | 828 / 1236 / 1549 | 0 / −56 / −16 | As mesmas causas acima                                                                                                                                                |
 
 Imagens lado a lado (Figma · Código · Diferença; **preto = igual**): [Home](imagens/comparacao-home.png) · [About](imagens/comparacao-about.png) · [Projects](imagens/comparacao-projects.png) · [Contact](imagens/comparacao-contact.png)
 
@@ -29,15 +29,15 @@ Imagens lado a lado (Figma · Código · Diferença; **preto = igual**): [Home](
 
 São mudanças de acessibilidade ou necessidades da web. Para o Figma e o código voltarem a concordar, é o **Figma** que precisa mudar.
 
-| #   | Item                      | Figma                                  | Código                                                   | Motivo                                                                  |
-| --- | ------------------------- | -------------------------------------- | -------------------------------------------------------- | ----------------------------------------------------------------------- |
-| 1   | **Cor dos links**         | `color/text/link` `#d946b0` (3,62:1; 3,11:1 no hover) | `#a31585` (`pink-purple/500`): 6,57:1 e 5,65:1 | WCAG 1.4.3. **Decisão sua.** Os ícones já eram `#a31585`, então texto e ícone agora têm a mesma cor |
-| 2   | **Borda dos campos**      | `color/border/default` `#38ccbe` (1,87:1) | `#17847a` (`mint/600`): 4,27:1                        | WCAG 1.4.11 pede 3:1 para a borda de um campo                            |
-| 3   | **Estado de foco**        | não existe                             | anel de 2px em `indigo/500`, 2px de afastamento (14,79:1) | WCAG 2.4.7                                                              |
-| 4   | **Texto dos campos**      | 14px                                   | 16px (o digitado em `text/primary`)                      | O Safari do iPhone dá zoom sozinho em campos com menos de 16px           |
-| 5   | **Hover do botão**        | não existe                             | fundo `indigo/700`                                       | Feedback ao passar o mouse                                              |
-| 6   | **Hover dos links de texto** | não existe                          | sublinhado                                               | Idem                                                                    |
-| 7   | **"Skip to main content"** | não existe                            | link visível só quando recebe foco (primeiro Tab)         | WCAG 2.4.1: quem usa teclado pula a navegação                           |
+| #   | Item                         | Figma                                                 | Código                                                    | Motivo                                                                                              |
+| --- | ---------------------------- | ----------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| 1   | **Cor dos links**            | `color/text/link` `#d946b0` (3,62:1; 3,11:1 no hover) | `#a31585` (`pink-purple/500`): 6,57:1 e 5,65:1            | WCAG 1.4.3. **Decisão sua.** Os ícones já eram `#a31585`, então texto e ícone agora têm a mesma cor |
+| 2   | **Borda dos campos**         | `color/border/default` `#38ccbe` (1,87:1)             | `#17847a` (`mint/600`): 4,27:1                            | WCAG 1.4.11 pede 3:1 para a borda de um campo                                                       |
+| 3   | **Estado de foco**           | não existe                                            | anel de 2px em `indigo/500`, 2px de afastamento (14,79:1) | WCAG 2.4.7                                                                                          |
+| 4   | **Texto dos campos**         | 14px                                                  | 16px (o digitado em `text/primary`)                       | O Safari do iPhone dá zoom sozinho em campos com menos de 16px                                      |
+| 5   | **Hover do botão**           | não existe                                            | fundo `indigo/700`                                        | Feedback ao passar o mouse                                                                          |
+| 6   | **Hover dos links de texto** | não existe                                            | sublinhado                                                | Idem                                                                                                |
+| 7   | **"Skip to main content"**   | não existe                                            | link visível só quando recebe foco (primeiro Tab)         | WCAG 2.4.1: quem usa teclado pula a navegação                                                       |
 
 Para alinhar: troque o valor da variável `color/text/link`, crie `color/border/input`, desenhe os estados de foco e hover, e atualize o estilo do campo.
 
@@ -45,19 +45,19 @@ Para alinhar: troque o valor da variável `color/text/link`, crie `color/border/
 
 Em todos estes casos o Figma tinha duas versões ou um detalhe que parece acidente. **Escolhi um lado.** Se preferir o outro, é só pedir (ou corrigir o Figma).
 
-| Item                        | No Figma                                                    | No código                                         |
-| --------------------------- | ----------------------------------------------------------- | ------------------------------------------------- |
-| Altura da navegação         | 16px (Home, About) × 24px (Projects, Contact)               | 16px em todas (componente `Nav`)                  |
-| Ícones das abas             | mudam de página para página                                 | Home = sorriso, Projects = palmas, About = sorriso, Contact = balão (como em Home e About) |
-| Rodapé                      | Contact tem outra versão (16px, mais alta) e diz "Designed **in** Figma" | Componente `Footer` em todas, "Designed **on** Figma" |
-| Rótulos de seção            | 20px (estilo H2); "Skills" e "Relevant Links" com 22px      | 20px em todos                                     |
-| Grade de "Skills"           | linha vazia de 36px sobrando                                | não replicada                                     |
-| Botão "Send message"        | moldura de texto de 153px, botão com folga à direita        | botão acompanha o texto                           |
-| Espaços duplos              | "Hi,  I’m Lari", "Cancer survivor,  married"                | um espaço                                         |
-| "LinkedIn"                  | "Linkedin" no About                                         | "LinkedIn"                                        |
-| Altura dos cartões          | título fixo em 60px, descrição em 84px                      | alturas **mínimas** (iguais hoje; crescem se o texto crescer) |
-| Linha divisória da janela   | imagem SVG                                                  | borda CSS (mesmo visual, acompanha a largura)     |
-| Cor do texto no About       | preto (`#000`), enquanto os cartões usam `text/primary`     | mantido como no Figma. É uma inconsistência pequena de design |
+| Item                      | No Figma                                                                 | No código                                                                                  |
+| ------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| Altura da navegação       | 16px (Home, About) × 24px (Projects, Contact)                            | 16px em todas (componente `Nav`)                                                           |
+| Ícones das abas           | mudam de página para página                                              | Home = sorriso, Projects = palmas, About = sorriso, Contact = balão (como em Home e About) |
+| Rodapé                    | Contact tem outra versão (16px, mais alta) e diz "Designed **in** Figma" | Componente `Footer` em todas, "Designed **on** Figma"                                      |
+| Rótulos de seção          | 20px (estilo H2); "Skills" e "Relevant Links" com 22px                   | 20px em todos                                                                              |
+| Grade de "Skills"         | linha vazia de 36px sobrando                                             | não replicada                                                                              |
+| Botão "Send message"      | moldura de texto de 153px, botão com folga à direita                     | botão acompanha o texto                                                                    |
+| Espaços duplos            | "Hi, I’m Lari", "Cancer survivor, married"                               | um espaço                                                                                  |
+| "LinkedIn"                | "Linkedin" no About                                                      | "LinkedIn"                                                                                 |
+| Altura dos cartões        | título fixo em 60px, descrição em 84px                                   | alturas **mínimas** (iguais hoje; crescem se o texto crescer)                              |
+| Linha divisória da janela | imagem SVG                                                               | borda CSS (mesmo visual, acompanha a largura)                                              |
+| Cor do texto no About     | preto (`#000`), enquanto os cartões usam `text/primary`                  | mantido como no Figma. É uma inconsistência pequena de design                              |
 
 ## 4. Diferenças inevitáveis da web
 

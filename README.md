@@ -4,13 +4,15 @@ Guia deste projeto, escrito para quem está fazendo um site de ponta a ponta pel
 
 ## A "cola" (o que mais vai ser usado)
 
-| Quero…                                 | Faço isto                                                                       |
-| -------------------------------------- | ------------------------------------------------------------------------------- |
-| Abrir o projeto no VS Code             | Terminal: `cd ~/Documents/codes/larididone` e depois `code .`                   |
-| Ver o site no navegador, ao vivo       | No VS Code, clique em **Go Live** (canto inferior direito). Cada ⌘S atualiza a tela |
-| Procurar problemas de HTML e acessibilidade | `npm run check`                                                            |
-| Deixar o código organizado             | Só salvar com ⌘S (automático). Ou `npm run format`                              |
-| Salvar uma versão do trabalho          | Seção 6 (Git)                                                                   |
+| Quero…                                       | Faço isto                                                                                               |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Abrir o projeto no VS Code                   | Terminal: `cd ~/Documents/codes/larididone` e depois `code .`                                           |
+| Ver o site no navegador, ao vivo             | No VS Code, abra `index.html` e clique em **Go Live** (canto inferior direito). Cada ⌘S atualiza a tela |
+| Procurar problemas de HTML e acessibilidade  | `npm run check`                                                                                         |
+| Deixar o código organizado                   | Só salvar com ⌘S (automático). Ou `npm run format`                                                      |
+| Mudar uma cor, tamanho de texto ou espaço    | `css/tokens.css`: é o único lugar onde esses valores vivem                                              |
+| Saber onde o site difere do Figma, e por quê | [docs/design-vs-codigo.md](docs/design-vs-codigo.md)                                                    |
+| Salvar uma versão do trabalho                | Seção 6 (Git)                                                                                           |
 
 > **Importante:** abra a pasta `larididone` no VS Code (não a pasta `codes`). É ela que carrega as configurações deste projeto (`.vscode/`).
 
@@ -18,29 +20,29 @@ Guia deste projeto, escrito para quem está fazendo um site de ponta a ponta pel
 
 ## 1. O que está instalado neste computador
 
-| Ferramenta                       | Para que serve                                                                 |
-| -------------------------------- | ------------------------------------------------------------------------------ |
-| **Node.js + npm**                | Roda as ferramentas de verificação. O site em si **não** depende de Node       |
-| **Comando `code`**               | Abre o VS Code pelo terminal                                                   |
-| **Git**                          | Guarda o histórico de versões (já configurado com seu nome e e-mail)           |
-| **Live Server** (VS Code)        | Mostra o site no navegador e atualiza sozinho                                  |
-| **Prettier** (VS Code)           | Mantém o código sempre bem indentado e padronizado                             |
-| **axe Accessibility Linter**     | Sublinha problemas de acessibilidade no HTML enquanto você escreve             |
-| **HTML CSS Support** (VS Code)   | Autocompleta no HTML os nomes de classes que existem no seu CSS                |
-| **Figma for VS Code**            | Mostra o design do Figma dentro do VS Code (abra o painel do Figma e faça login) |
-| **`npm run check`**              | Valida o HTML e roda uma auditoria de acessibilidade (WCAG 2.2 AA) em português |
+| Ferramenta                     | Para que serve                                                                   |
+| ------------------------------ | -------------------------------------------------------------------------------- |
+| **Node.js + npm**              | Roda as ferramentas de verificação. O site em si **não** depende de Node         |
+| **Comando `code`**             | Abre o VS Code pelo terminal                                                     |
+| **Git**                        | Guarda o histórico de versões (já configurado com seu nome e e-mail)             |
+| **Live Server** (VS Code)      | Mostra o site no navegador e atualiza sozinho                                    |
+| **Prettier** (VS Code)         | Mantém o código sempre bem indentado e padronizado                               |
+| **axe Accessibility Linter**   | Sublinha problemas de acessibilidade no HTML enquanto você escreve               |
+| **HTML CSS Support** (VS Code) | Autocompleta no HTML os nomes de classes que existem no seu CSS                  |
+| **Figma for VS Code**          | Mostra o design do Figma dentro do VS Code (abra o painel do Figma e faça login) |
+| **`npm run check`**            | Valida o HTML e roda uma auditoria de acessibilidade (WCAG 2.2 AA) em português  |
 
 ## 2. O processo, do começo ao fim
 
 Marque aqui conforme avançar.
 
 - [x] **0. Preparar o computador** — feito.
-- [ ] **1. Fechar o design no Figma** ([arquivo UI-Design](https://www.figma.com/design/kTQyYilEA2rApHxS9cB0Da/UI-Design); a [revisão de acessibilidade do design](docs/revisao-do-design.md) lista o que ajustar). Antes de codar, defina o que falta: conteúdo real (textos, imagens), cores, tipografia, espaçamentos, versões **celular** e **desktop**, e os estados dos elementos clicáveis (normal, hover, **foco**). Rode o checklist de acessibilidade do design (seção 4). Corrigir contraste no Figma custa minutos; corrigir depois de programado custa horas.
-- [ ] **2. Escrever o HTML.** Primeiro só estrutura e conteúdo, sem se preocupar com aparência: títulos, parágrafos, links, listas, imagens com texto alternativo. Uma página bem estruturada já é acessível pela metade.
-- [ ] **3. Estilizar com CSS.** Transforme as cores, fontes e espaços do Figma em variáveis CSS (seção 3) e construa o layout, começando pelo celular.
-- [ ] **4. JavaScript só se for preciso.** Um portfólio quase nunca precisa. Se precisar (ex.: menu no celular), prefira o mínimo.
-- [ ] **5. Testar.** `npm run check` + teste manual (seção 4). Em cada etapa, não só no final.
-- [ ] **6. Salvar versões.** Um _commit_ a cada avanço que funciona (seção 6).
+- [ ] **1. Fechar o design no Figma** — **em andamento.** ([arquivo UI-Design](https://www.figma.com/design/kTQyYilEA2rApHxS9cB0Da/UI-Design); [revisão de acessibilidade do design](docs/revisao-do-design.md).) O Figma ainda precisa das telas de celular, do estado de foco, do hover de links e botão, e dos ajustes de cor listados em [docs/design-vs-codigo.md](docs/design-vs-codigo.md). Corrigir contraste no Figma custa minutos; corrigir depois de programado custa horas.
+- [x] **2. Escrever o HTML** — feito: as 4 páginas (Home, About, Projects, Contact), com títulos, listas e landmarks.
+- [x] **3. Estilizar com CSS** — feito: tokens em `css/tokens.css` e layout em `css/styles.css`. Falta aprovar o comportamento em telas pequenas ([docs/responsivo.md](docs/responsivo.md)).
+- [x] **4. JavaScript só se for preciso** — feito: só um aviso no formulário de contato (`js/contact-form.js`).
+- [ ] **5. Testar** — os testes automáticos passam (HTML, acessibilidade, teclado, larguras de 320 a 1440px, texto a 200%). **Falta** o teste manual em um celular de verdade e com o VoiceOver (seção 4).
+- [x] **6. Salvar versões** — em dia: tudo está commitado na `main`.
 - [ ] **7. Publicar** (seção 7).
 - [ ] **8. Manter.** Atualizar projetos, textos e repetir `npm run check` a cada mudança.
 
@@ -48,15 +50,23 @@ Marque aqui conforme avançar.
 
 ## 3. Do Figma para o código
 
-| No Figma                                       | No código                                                                    |
-| ---------------------------------------------- | ---------------------------------------------------------------------------- |
-| Variables / Styles (cores, tipografia, espaços) | Variáveis CSS em `:root`: `--cor-fundo`, `--espaco-4`… (use os mesmos nomes) |
-| Components e variants                          | Elementos HTML + classes CSS reutilizáveis                                   |
-| Auto layout                                    | Flexbox ou Grid                                                              |
-| Frames de celular / tablet / desktop           | CSS que começa no celular + `@media (min-width: …)` onde o layout pede       |
-| Estados do protótipo (hover, pressed…)         | `:hover`, `:active` e, principalmente, **`:focus-visible`**                  |
-| Ordem das camadas                              | **Não vale como ordem de leitura.** A ordem é a do HTML (títulos, landmarks) |
-| Px                                             | `rem` para texto (respeita o tamanho de fonte que a pessoa escolheu)         |
+| No Figma                                        | No código                                                                                          |
+| ----------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Variables / Styles (cores, tipografia, espaços) | Variáveis CSS em `css/tokens.css` com os mesmos nomes (`color/text/link` vira `--color-text-link`) |
+| Components e variants                           | Elementos HTML + classes CSS reutilizáveis (`.tab`, `.card`, `.window`, `.button`…)                |
+| Auto layout                                     | Flexbox ou Grid                                                                                    |
+| Frames de celular / tablet / desktop            | CSS que começa no celular + `@media (min-width: 40em)` onde o layout pede                          |
+| Estados do protótipo (hover, pressed…)          | `:hover`, `:active` e, principalmente, **`:focus-visible`**                                        |
+| Ordem das camadas                               | **Não vale como ordem de leitura.** A ordem é a do HTML (títulos, landmarks)                       |
+| Px                                              | `rem` para texto e espaços (respeita o tamanho de fonte que a pessoa escolheu)                     |
+| Ícones                                          | SVGs exportados do Figma, em `assets/icons/`                                                       |
+| Fundo pontilhado (`BGPattern`)                  | Imagem de fundo repetida: `assets/pattern-dots.svg`                                                |
+
+**Onde ler mais:**
+
+- [docs/revisao-do-design.md](docs/revisao-do-design.md): o que o design tem, tokens, contraste medido e o que ajustar no Figma.
+- [docs/design-vs-codigo.md](docs/design-vs-codigo.md): cada diferença entre o Figma e o código, com o motivo, e como mantê-los alinhados.
+- [docs/responsivo.md](docs/responsivo.md): como o site se adapta a telas pequenas (proposta aguardando aprovação).
 
 ## 4. Acessibilidade
 
@@ -70,8 +80,8 @@ Marque aqui conforme avançar.
 - **Desenhe o estado de foco** de cada link e botão, bem visível. É o estado mais esquecido.
 - **Não use só cor** para comunicar algo (link, erro, selecionado): some sublinhado, ícone ou texto.
 - **Alvos de clique/toque:** no mínimo **24×24px** (ideal 44×44px no celular).
-- **Texto:** corpo a partir de 16px, entrelinha em torno de 1,5, linhas de no máximo ~75 caracteres.
-- **Texto sobre imagem:** garanta o contraste com um fundo/overlay.
+- **Texto:** corpo a partir de 16px, entrelinha em torno de 1,5, linhas de no máximo ~75 caracteres. (O design atual usa 14px no corpo: é uma decisão em aberto em [docs/revisao-do-design.md](docs/revisao-do-design.md).)
+- **Texto sobre imagem ou fundo com padrão:** garanta o contraste no **pior ponto** do fundo, não só na cor principal.
 - **Planeje os títulos:** um H1 por página, depois H2, H3… em ordem.
 
 ### No HTML
@@ -80,16 +90,18 @@ Marque aqui conforme avançar.
 - Estrutura com `<header>`, `<nav>`, `<main>`, `<footer>`, e **um** `<h1>` por página (sem pular níveis).
 - Um link "Pular para o conteúdo" como primeiro elemento da página.
 - **Link navega, botão executa uma ação.** Use `<a>` e `<button>`, nunca `<div>` clicável.
-- Imagens com `alt` que descreva o que importa (ou `alt=""` se for só decoração).
+- Imagens com `alt` que descreva o que importa (ou `alt=""` se for só decoração). Ícones e ilustrações decorativos ficam escondidos de leitores de tela (`aria-hidden`).
 - `aria-current="page"` no link da página atual no menu.
-- Texto de link que faça sentido sozinho ("Ver o projeto Atlas", não "clique aqui").
+- Texto de link que faça sentido sozinho. Quando vários links têm o mesmo texto (os 4 "View case study"), cada um ganha um complemento só para leitores de tela.
+- Listas sem marcador (`list-style: none`) ganham `role="list"`: sem isso o VoiceOver deixa de anunciá-las como lista. O validador de HTML (`.htmlvalidate.json`) está configurado para aceitar essa exceção.
 - Regra de ouro do ARIA: se o HTML nativo resolve, não use ARIA.
 
 ### No CSS
 
 - **Nunca** use `outline: none` sem colocar outro indicador de foco no lugar. Use `:focus-visible`.
-- Respeite `@media (prefers-reduced-motion: reduce)` em qualquer animação.
+- Respeite `@media (prefers-reduced-motion: reduce)` em qualquer animação. (Hoje o site não tem animações.)
 - Tamanhos de texto em `rem`; o layout não pode quebrar com zoom de 200%.
+- Cuidado com a **ordem** das regras: um `outline` definido num estilo que vem depois da regra de foco a anula. Aconteceu com o botão de enviar, e o teste de teclado pegou.
 
 ### Teste manual (leva ~10 minutos por página)
 
@@ -106,16 +118,22 @@ A ferramenta automática encontra só uma parte dos problemas. O resto é com vo
 Cobre: estrutura do HTML, contraste do estado normal, nomes e textos alternativos faltando, títulos, landmarks, tamanho de alvo, em celular (375px) e desktop (1280px).
 **Não cobre:** estados de hover/foco, qualidade do texto alternativo, ordem de leitura, uso do teclado, leitor de tela. Por isso o teste manual existe.
 
+**Sobre o aviso "Para revisar manualmente" no rodapé:** é esperado. O texto do rodapé fica sobre o fundo pontilhado e o axe não consegue calcular contraste sobre imagem de fundo. Já conferi à mão: no pior ponto (o pontinho teal mais escuro) o contraste é de **5,47:1**, acima do mínimo de 4,5:1. Se aparecer um aviso **novo**, vale olhar.
+
+**Já testado neste projeto:** ordem do Tab e anel de foco em todos os elementos, link "Pular para o conteúdo", larguras de 320 a 1440px sem rolagem horizontal, texto a 200%, espaçamento de texto aumentado. Detalhes em [docs/responsivo.md](docs/responsivo.md).
+
 ## 5. Comandos
 
-| Comando                          | O que faz                                                                  |
-| -------------------------------- | -------------------------------------------------------------------------- |
-| `npm run check`                  | Roda tudo: validação do HTML + acessibilidade                              |
-| `npm run check:html`             | Só valida o HTML (mensagens em inglês; cada uma tem link explicando)       |
-| `npm run check:a11y`             | Só a auditoria de acessibilidade, em português                             |
-| `node scripts/a11y.mjs index.html` | Auditoria de uma página específica                                       |
-| `npm run format`                 | Reorganiza todos os arquivos com o Prettier                                |
-| `npm install`                    | Reinstala as ferramentas (necessário só em um computador novo)             |
+| Comando                            | O que faz                                                            |
+| ---------------------------------- | -------------------------------------------------------------------- |
+| `npm run check`                    | Roda tudo: validação do HTML + acessibilidade                        |
+| `npm run check:html`               | Só valida o HTML (mensagens em inglês; cada uma tem link explicando) |
+| `npm run check:a11y`               | Só a auditoria de acessibilidade, em português                       |
+| `node scripts/a11y.mjs about.html` | Auditoria de uma página específica                                   |
+| `npm run format`                   | Reorganiza todos os arquivos com o Prettier                          |
+| `npm install`                      | Reinstala as ferramentas (necessário só em um computador novo)       |
+
+**Configurações:** `.prettierrc.json` faz o Prettier quebrar linhas em 100 colunas; `.htmlvalidate.json` usa as regras recomendadas, compatíveis com o Prettier, e aceita `role="list"`.
 
 ## 6. Git: salvar versões
 
@@ -128,6 +146,16 @@ git commit -m "Adiciona seção de projetos"   # tira a foto, com uma legenda cu
 git log --oneline               # lista as versões salvas
 ```
 
+**Trabalhe em branches.** Uma _branch_ é uma linha de trabalho separada: a `main` fica estável e o que está em construção fica à parte, até estar bom.
+
+```bash
+git switch -c nome-da-tarefa    # cria uma branch nova e vai para ela
+# ...trabalha e faz commits...
+git switch main                 # volta para a main
+git merge nome-da-tarefa        # traz o trabalho para a main
+git branch -d nome-da-tarefa    # apaga a branch (já incorporada)
+```
+
 Prefere uma interface visual? O **GitHub Desktop** já está instalado e faz o mesmo com botões.
 
 > **Atenção:** o repositório Git está na pasta `~/Documents/codes`, que também contém o projeto `dona-da-dona`. Funciona, mas para publicar o site é bem mais simples ter o `larididone` como repositório próprio. Vale resolver isso **antes** da etapa de publicar.
@@ -138,31 +166,49 @@ Para um site estático existem opções gratuitas com HTTPS automático: **GitHu
 
 Checklist antes de publicar:
 
-- [ ] `npm run check` sem problemas, e teste manual feito
-- [ ] Nada de texto ou imagem "placeholder", nem link `#` que não leva a lugar nenhum
-- [ ] `<title>` e `<meta name="description">` em cada página
+- [x] `npm run check` sem problemas
+- [ ] Teste manual feito, em um celular de verdade e com o VoiceOver
+- [ ] Trocar o que é provisório (lista completa em [docs/design-vs-codigo.md](docs/design-vs-codigo.md), seção 6): endereço real do LinkedIn, links `#` dos cartões, textos "Sample project cards…" e "Illustrative concept", seção "Skills"
+- [ ] Formulário de contato: conectar a um serviço de envio (ex.: Formspree, Netlify Forms) ou trocar por um link de e-mail. Hoje ele não envia nada
+- [x] `<title>` e `<meta name="description">` em cada página (conferir o texto final)
 - [ ] Favicon e imagem de compartilhamento (Open Graph)
-- [ ] Testado em um celular de verdade
+- [ ] Página 404
+- [ ] Separar o `larididone` em um repositório próprio
 
 ## 8. Estrutura de pastas
 
 ```
 larididone/
-├── index.html, projects.html, contact.html   ← as páginas
-├── style.css                                 ← o visual
-├── assets/                                   ← imagens, fontes, ícones
-├── scripts/a11y.mjs                          ← o verificador de acessibilidade
-├── package.json                              ← lista de ferramentas e comandos (npm)
-├── .vscode/                                  ← configurações do VS Code para este projeto
-└── README.md                                 ← este guia
+├── index.html, about.html, projects.html, contact.html   ← as páginas
+├── css/
+│   ├── tokens.css           ← cores, tamanhos e espaços (espelham as variáveis do Figma)
+│   └── styles.css           ← layout, componentes e comportamento em telas pequenas
+├── js/contact-form.js       ← aviso do formulário (ele ainda não envia nada)
+├── assets/
+│   ├── fonts/               ← Space Grotesk, hospedada no site (licença OFL)
+│   ├── icons/               ← ícones exportados do Figma
+│   └── pattern-dots.svg     ← fundo pontilhado
+├── docs/
+│   ├── revisao-do-design.md ← revisão do Figma: tokens, contraste, ajustes
+│   ├── design-vs-codigo.md  ← onde e por que o código difere do Figma
+│   ├── responsivo.md        ← proposta para telas pequenas
+│   └── imagens/             ← comparações Figma × código e folhas de redimensionamento
+├── scripts/a11y.mjs         ← o verificador de acessibilidade
+├── package.json             ← lista de ferramentas e comandos (npm)
+├── .htmlvalidate.json       ← regras do validador de HTML
+├── .prettierrc.json         ← regras do formatador
+├── .vscode/                 ← configurações do VS Code para este projeto
+└── README.md                ← este guia
 ```
 
 ## 9. Se algo der errado
 
-| Sintoma                                          | O que fazer                                                                 |
-| ------------------------------------------------ | --------------------------------------------------------------------------- |
-| `command not found: code` (ou `node`, `npm`)     | Feche e **abra um terminal novo** (o do Mac ou o do VS Code). Terminais que já estavam abertos não enxergam a configuração nova, inclusive o do Claude Code |
-| `Não encontrei o Google Chrome` no `npm run check` | Instale o Chrome, ou use `CHROME_PATH="/caminho/do/chrome" npm run check`   |
-| Algo estranho depois de `npm install`            | `rm -rf node_modules && npm install`                                        |
-| O Prettier reorganizou um arquivo antigo ao salvar | Normal na primeira vez: ele só ajusta indentação e quebras de linha         |
-| Dúvida em qualquer etapa                         | Peça ajuda ao Claude citando a seção deste guia                             |
+| Sintoma                                                   | O que fazer                                                                                                                                                          |
+| --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `command not found: code` (ou `node`, `npm`)              | Feche e **abra um terminal novo** (o do Mac ou o do VS Code). Terminais que já estavam abertos não enxergam a configuração nova, inclusive o do Claude Code          |
+| `Não encontrei o Google Chrome` no `npm run check`        | Instale o Chrome, ou use `CHROME_PATH="/caminho/do/chrome" npm run check`                                                                                            |
+| O `npm run check` lista o rodapé em "revisar manualmente" | É esperado (fundo pontilhado). Veja a seção 4                                                                                                                        |
+| A seta ↗ parece diferente em outro computador             | A fonte do site não inclui esse símbolo, então o navegador usa uma fonte do sistema. É só decorativa ([docs/design-vs-codigo.md](docs/design-vs-codigo.md), seção 4) |
+| Algo estranho depois de `npm install`                     | `rm -rf node_modules && npm install`                                                                                                                                 |
+| O Prettier reorganizou um arquivo ao salvar               | Normal: ele só ajusta indentação e quebras de linha                                                                                                                  |
+| Dúvida em qualquer etapa                                  | Peça ajuda ao Claude citando a seção deste guia                                                                                                                      |

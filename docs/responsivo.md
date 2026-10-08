@@ -12,19 +12,19 @@ O Figma só tem frames de desktop (1440px). Esta é a minha proposta de como o s
 
 ## Elemento por elemento
 
-| Elemento                         | 640px ou mais (= Figma)                            | Menos de 640px (proposta)                                                | Por quê                                                                 |
-| -------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| **Navegação**                    | 1 linha, centralizada, com borda e cantos de baixo arredondados | Barra de ponta a ponta, abas em **2×2**, cada uma com 44px de altura | 4 abas com ícone e texto (603px) não cabem em 320px. Mantém ícone e texto |
-| **Janela da Home**               | 700px, centralizada                                | Largura total com 16px de margem, centralizada na altura da tela         | Mantém o "pop-up" retrô sem cortar texto                                |
-| **Título da Home**               | 48px                                               | 32px (320px de largura) → 34px (375px) → 48px (720px ou mais)            | Escala suave, sem saltos                                                |
-| **Subtítulo da Home**            | 36px                                               | 24px (320px) → 26px (375px) → 36px (720px ou mais)                       | Idem                                                                    |
-| **H1 das páginas**               | 36px                                               | 28px (320px) → 29px (375px) → 36px (770px ou mais)                       | Idem                                                                    |
-| **Painel** (About, Projects, Contact) | 686px, centralizado                           | Largura total com 16px de margem e o mesmo padding interno               | Aproveita a largura                                                     |
-| **Linhas rótulo + conteúdo**     | 2 colunas: rótulo de 145px + conteúdo              | **Empilha**: rótulo em cima, conteúdo embaixo                            | Em 375px, 145px de rótulo deixaria só ~130px para o conteúdo            |
-| **Cartões de projeto**           | 2 colunas de 314px                                 | **1 coluna** de largura total; a partir de ~620px de largura, 2 colunas  | A ilustração mantém a proporção 280:164 em qualquer largura             |
-| **Formulário**                   | Campos de 475px à direita do rótulo                | Campos de largura total, empilhados sob o rótulo                         | Campo largo é mais fácil de tocar e de ler                              |
-| **Rodapé**                       | 2 textos nas pontas, numa faixa de 566px           | Empilhado e centralizado; o texto longo pode quebrar em 2 linhas         | Não cabe em uma linha em 375px                                          |
-| **Fundo pontilhado**             | tile de 16×8px                                     | igual                                                                    | Não depende da largura                                                  |
+| Elemento                              | 640px ou mais (= Figma)                                         | Menos de 640px (proposta)                                               | Por quê                                                                   |
+| ------------------------------------- | --------------------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| **Navegação**                         | 1 linha, centralizada, com borda e cantos de baixo arredondados | Barra de ponta a ponta, abas em **2×2**, cada uma com 44px de altura    | 4 abas com ícone e texto (603px) não cabem em 320px. Mantém ícone e texto |
+| **Janela da Home**                    | 700px, centralizada                                             | Largura total com 16px de margem, centralizada na altura da tela        | Mantém o "pop-up" retrô sem cortar texto                                  |
+| **Título da Home**                    | 48px                                                            | 32px (320px de largura) → 34px (375px) → 48px (720px ou mais)           | Escala suave, sem saltos                                                  |
+| **Subtítulo da Home**                 | 36px                                                            | 24px (320px) → 26px (375px) → 36px (720px ou mais)                      | Idem                                                                      |
+| **H1 das páginas**                    | 36px                                                            | 28px (320px) → 29px (375px) → 36px (770px ou mais)                      | Idem                                                                      |
+| **Painel** (About, Projects, Contact) | 686px, centralizado                                             | Largura total com 16px de margem e o mesmo padding interno              | Aproveita a largura                                                       |
+| **Linhas rótulo + conteúdo**          | 2 colunas: rótulo de 145px + conteúdo                           | **Empilha**: rótulo em cima, conteúdo embaixo                           | Em 375px, 145px de rótulo deixaria só ~130px para o conteúdo              |
+| **Cartões de projeto**                | 2 colunas de 314px                                              | **1 coluna** de largura total; a partir de ~620px de largura, 2 colunas | A ilustração mantém a proporção 280:164 em qualquer largura               |
+| **Formulário**                        | Campos de 475px à direita do rótulo                             | Campos de largura total, empilhados sob o rótulo                        | Campo largo é mais fácil de tocar e de ler                                |
+| **Rodapé**                            | 2 textos nas pontas, numa faixa de 566px                        | Empilhado e centralizado; o texto longo pode quebrar em 2 linhas        | Não cabe em uma linha em 375px                                            |
+| **Fundo pontilhado**                  | tile de 16×8px                                                  | igual                                                                   | Não depende da largura                                                    |
 
 ## Veja como ficou (celular · tablet · desktop)
 
@@ -47,11 +47,11 @@ Ainda falta, e só você ou um aparelho real faz: **testar num celular de verdad
 
 ## Alternativas que considerei e descartei
 
-| Alternativa                              | Por que não                                                                                 |
-| ---------------------------------------- | ------------------------------------------------------------------------------------------- |
-| Menu "hambúrguer"                        | Precisa de JavaScript, esconde os 4 destinos atrás de um toque extra. Com só 4 itens, 2×2 é mais simples e mais acessível |
-| Abas numa linha com rolagem horizontal   | Esconde itens e a rolagem horizontal dificulta o uso (e desrespeita o reflow da WCAG 1.4.10) |
-| Barra de abas fixa no rodapé do celular  | Ocupa tela, briga com as barras do navegador e foge do desenho (navegação no topo)          |
+| Alternativa                             | Por que não                                                                                                               |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Menu "hambúrguer"                       | Precisa de JavaScript, esconde os 4 destinos atrás de um toque extra. Com só 4 itens, 2×2 é mais simples e mais acessível |
+| Abas numa linha com rolagem horizontal  | Esconde itens e a rolagem horizontal dificulta o uso (e desrespeita o reflow da WCAG 1.4.10)                              |
+| Barra de abas fixa no rodapé do celular | Ocupa tela, briga com as barras do navegador e foge do desenho (navegação no topo)                                        |
 
 ## Para você decidir
 
