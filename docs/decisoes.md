@@ -79,9 +79,16 @@ Datas no formato dia/mês/ano. ✅ = decisão sua · 🔧 = padrão que adotei (
 
 - **Decisão:** a aba **Contact** do menu é um link `mailto:` que abre direto o programa de e-mail, **sem abrir uma tela nova**. O botão "Get in touch" em Projects usa o mesmo link. A página `contact.html`, o formulário e `js/contact-form.js` foram removidos (continuam no histórico do Git). Isto **substitui a D6**.
 - **Acessibilidade:** a aba leva um texto só para leitor de tela, "(opens your email app)", para ninguém se surpreender com a troca de programa. A aba não tem estado de "página atual".
-- **Em aberto:** o e-mail real. Hoje os links usam `EMAIL@EXAMPLE.COM` (é preciso trocar antes de publicar; a pessoa que visita vê o endereço, e ele pode receber spam).
+- **E-mail:** `larissadidone@gmail.com`, definido por você em 13/10/2026. Ele fica visível no código e para quem visita o site (pode receber spam). Para trocar, procure `mailto:` em `index.html`, `about.html`, `projects.html` e `modelos/estudo-de-caso.html`.
 - **Figma:** o frame desktop "Contact" continua no arquivo, mas **está obsoleto**. A aba Contact segue no desenho, agora como link de e-mail.
 - **Se voltar atrás:** `git log` mostra a página; um serviço de formulário seria a alternativa 2 da seção 5.
+
+### D12. Redimensionamento aprovado — 13/10/2026
+
+- **Decisão:** você aprovou tudo o que faltava de [responsivo.md](responsivo.md): título e subtítulo fluidos, cartões em 1 coluna (2 a partir de ~620px), rótulos e rodapé empilhados e margens de 16px. O menu (dock) já era a D7.
+- **Onde:** o bloco `width < 40em` e o `min-width: 40em` em [`css/styles.css`](../css/styles.css) e os `clamp()` de [`css/tokens.css`](../css/tokens.css).
+- **Capturas:** refeitas em 13/10/2026 (corpo em 16px, sem a página Contact): [Home](imagens/responsivo-home.png) · [About](imagens/responsivo-about.png) · [Projects](imagens/responsivo-projects.png).
+- **Continua em aberto:** o teste em celular de verdade e com o VoiceOver (final do projeto).
 
 ## 2. Padrões que adotei (você pode mudar) 🔧
 
@@ -93,7 +100,7 @@ Datas no formato dia/mês/ano. ✅ = decisão sua · 🔧 = padrão que adotei (
 | **Tokens com os nomes do Figma**                    | Cores, tamanhos e espaços mudam num lugar só                                                                                                                    | [`css/tokens.css`](../css/tokens.css)                        |
 | **Correções de acessibilidade além do Figma**       | Borda dos campos `#17847a`, anel de foco de 2px em `#0d0081`, texto dos campos em 16px, hover do botão, link "Pular para o conteúdo"                            | [design-vs-codigo.md](design-vs-codigo.md), seção 2          |
 | **Onde o Figma era inconsistente, escolhi um lado** | Altura da navegação, ícones das abas, versão do rodapé, tamanho dos rótulos e outros                                                                            | [design-vs-codigo.md](design-vs-codigo.md), seção 3          |
-| **Redimensionamento: um ponto de quebra (640px)**   | Título fluido, cartões em 1 coluna, rótulos e rodapé empilhados, margens de 16px. **Implementado como proposta; aguarda sua aprovação explícita**               | [responsivo.md](responsivo.md)                               |
+| **Redimensionamento: um ponto de quebra (640px)**   | Título fluido, cartões em 1 coluna, rótulos e rodapé empilhados, margens de 16px. **Aprovado em 13/10/2026 (D12)**                                              | [responsivo.md](responsivo.md)                               |
 | ~~Texto do corpo em 14px~~ (substituído pela D10)   | É o que está no Figma (em `rem`). 16px é recomendação, não exigência da WCAG                                                                                    | `--fs-body` em `css/tokens.css`                              |
 | **Texto da Home: a versão da página**               | "Hello, I’m Lari. I lead designers through change…", e não a variante "Welcome, I’m Lari…"                                                                      | `index.html`                                                 |
 | **Sem Stylelint**                                   | A dependência dele gerava 6 avisos de segurança no `npm audit`, sem correção disponível; o VS Code já valida o CSS                                              | Configuração do projeto                                      |
@@ -106,24 +113,24 @@ Atualizado em 13/10/2026, depois da sua revisão da lista.
 
 ### Adiadas de propósito (você decidiu esperar)
 
-| Pendência                                                                               | Quando                      | Observação                                                               |
-| --------------------------------------------------------------------------------------- | --------------------------- | ------------------------------------------------------------------------ |
-| Conteúdo real: endereço do LinkedIn, projetos e páginas dos estudos de caso             | Daqui a um tempo            | Os links dos cartões são `#`. Os modelos já estão prontos (D9)           |
-| Teste em celular de verdade e com o VoiceOver                                           | Final do projeto            | Principalmente a dock com a barra do Safari embaixo                      |
-| Aprovar o resto do redimensionamento (título fluido, cartões, rótulos, rodapé, margens) | Por enquanto fica como está | Segue valendo como proposta; checklist em [responsivo.md](responsivo.md) |
-| Separar o repositório                                                                   | Antes de publicar (D8)      |                                                                          |
-| Favicon, imagem de compartilhamento e página 404                                        | Antes de publicar           | Checklist no [README](../README.md), seção 7                             |
+| Pendência                                                                                   | Quando                 | Observação                                                     |
+| ------------------------------------------------------------------------------------------- | ---------------------- | -------------------------------------------------------------- |
+| Conteúdo real: endereço do LinkedIn, projetos e páginas dos estudos de caso                 | Daqui a um tempo       | Os links dos cartões são `#`. Os modelos já estão prontos (D9) |
+| Teste em celular de verdade e com o VoiceOver                                               | Final do projeto       | Principalmente a dock com a barra do Safari embaixo            |
+| ~~Aprovar o resto do redimensionamento (título fluido, cartões, rótulos, rodapé, margens)~~ | ✅ Aprovado (D12)      | Checklist em [responsivo.md](responsivo.md)                    |
+| Separar o repositório                                                                       | Antes de publicar (D8) |                                                                |
+| Favicon, imagem de compartilhamento e página 404                                            | Antes de publicar      | Checklist no [README](../README.md), seção 7                   |
 
 ### Em andamento ou esperando uma escolha sua
 
-| Pendência                                                                 | Situação                                                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| ~~Escolher um modelo de estudo de caso~~                                  | ✅ Modelo A (D9)                                                                                       |
-| ~~Como o formulário envia mensagens~~                                     | ✅ `mailto:` na aba Contact (D11). Falta o e-mail real                                                 |
-| ~~Corpo do texto: 14px ou 16px~~                                          | ✅ 16px (D10)                                                                                          |
-| Texto final da Home e projetos reais                                      | Você escreve; os modelos servem de roteiro                                                             |
-| ~~Atualizar o Figma (cor do link, borda dos campos, foco, hovers, dock)~~ | ✅ Feito em 13/10/2026: [figma-atualizacoes.md](figma-atualizacoes.md). Falta você conferir            |
-| ~~Desenhar as telas de celular no Figma~~                                 | ✅ Feito em 13/10/2026 (página Mobile (375)), como camadas e não como componentes. Falta você conferir |
+| Pendência                                                                 | Situação                                                                                                                               |
+| ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| ~~Escolher um modelo de estudo de caso~~                                  | ✅ Modelo A (D9)                                                                                                                       |
+| ~~Como o formulário envia mensagens~~                                     | ✅ `mailto:` na aba Contact (D11). Falta o e-mail real                                                                                 |
+| ~~Corpo do texto: 14px ou 16px~~                                          | ✅ 16px (D10)                                                                                                                          |
+| Texto final da Home e projetos reais                                      | Você escreve; os modelos servem de roteiro                                                                                             |
+| ~~Atualizar o Figma (cor do link, borda dos campos, foco, hovers, dock)~~ | ✅ Feito em 13/10/2026: [figma-atualizacoes.md](figma-atualizacoes.md). Falta você conferir                                            |
+| ~~Desenhar as telas de celular no Figma~~                                 | ✅ Feito em 13/10/2026 (página Mobile (375)), com `Mobile/Dock`, `Mobile/Footer` e `Mobile/Card` como componentes. Falta você conferir |
 
 ## 4. Como mudar uma decisão
 

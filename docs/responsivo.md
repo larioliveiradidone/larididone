@@ -1,6 +1,6 @@
 # Redimensionamento: como o site se adapta a telas menores
 
-O Figma só tem frames de desktop (1440px). Este documento descreve como o site se adapta a telas menores. **Já está implementado no código** para você poder ver e testar, mas nada disso existe no Figma até você aprovar (ou ajustar). O menu do celular já foi decidido por você; o resto aguarda sua aprovação.
+O Figma só tem frames de desktop (1440px). Este documento descreve como o site se adapta a telas menores. **Já está implementado no código** para você poder ver e testar, mas **Aprovado por você em 13/10/2026 (D12)**, e as telas de celular já estão no Figma (página Mobile (375), veja [figma-atualizacoes.md](figma-atualizacoes.md)).
 
 ## Decisão: o menu do celular é uma "dock" flutuante
 
@@ -50,7 +50,7 @@ A primeira proposta era uma grade 2×2 no topo. Você não gostou (ocupava 112px
 
 ## Veja como ficou (celular · tablet · desktop)
 
-> Capturas feitas **antes** de 13/10/2026: o corpo ainda era 14px e a página Contact existia. As telas de celular atuais estão no Figma (página Mobile (375)).
+> Capturas refeitas em 13/10/2026 (corpo em 16px).
 
 Cada folha mostra a primeira tela do celular, a página inteira (com a dock no fim), o tablet e o desktop.
 
@@ -89,13 +89,13 @@ Ainda falta, e só você ou um aparelho real faz: **testar num celular de verdad
 ## Para você decidir
 
 - [x] Menu do celular: **dock flutuante** (decidido em 08/10)
-- [ ] Título e subtítulo da Home **fluidos** (32 → 48px)
-- [ ] Cartões em **1 coluna** no celular (2 a partir de ~620px)
-- [ ] Rótulos **empilhados** acima do conteúdo no celular
-- [ ] Rodapé **empilhado** e centralizado
-- [ ] Margens laterais de **16px**
+- [x] Título e subtítulo da Home **fluidos** (32 → 48px)
+- [x] Cartões em **1 coluna** no celular (2 a partir de ~620px)
+- [x] Rótulos **empilhados** acima do conteúdo no celular
+- [x] Rodapé **empilhado** e centralizado
+- [x] Margens laterais de **16px**
 
-**Depois de aprovar, como levar isso para o Figma:**
+**Como foi levado para o Figma (feito em 13/10/2026):**
 
 1. Você desenha os frames de 375px (e 768px, se quiser) usando esta proposta como referência; ou
 2. eu desenho esses frames no seu arquivo do Figma a partir desta proposta (isso escreve no seu arquivo, então só faço com o seu "pode fazer"); ou

@@ -40,7 +40,7 @@ Marque aqui conforme avançar.
 - [x] **0. Preparar o computador** — feito.
 - [ ] **1. Fechar o design no Figma** — **em andamento.** ([arquivo UI-Design](https://www.figma.com/design/kTQyYilEA2rApHxS9cB0Da/UI-Design); [revisão de acessibilidade do design](docs/revisao-do-design.md).) Em 13/10/2026 o Figma ganhou as telas de celular, os estados de foco e hover e os ajustes de cor ([docs/figma-atualizacoes.md](docs/figma-atualizacoes.md)); falta você conferir. Corrigir contraste no Figma custa minutos; corrigir depois de programado custa horas.
 - [x] **2. Escrever o HTML** — feito: as 3 páginas (Home, About, Projects) e o modelo de estudo de caso em `modelos/`. A aba Contact é um link `mailto:` (D11 em docs/decisoes.md), com títulos, listas e landmarks.
-- [x] **3. Estilizar com CSS** — feito: tokens em `css/tokens.css` e layout em `css/styles.css`. O menu do celular é uma dock flutuante no rodapé (escolha sua); falta aprovar o resto do comportamento em telas pequenas ([docs/responsivo.md](docs/responsivo.md)).
+- [x] **3. Estilizar com CSS** — feito: tokens em `css/tokens.css` e layout em `css/styles.css`. O menu do celular é uma dock flutuante no rodapé (escolha sua); o comportamento em telas pequenas foi aprovado em 13/10/2026 ([docs/responsivo.md](docs/responsivo.md)).
 - [x] **4. JavaScript só se for preciso** — feito, com um script pequeno (a detecção de texto muito grande, que devolve o menu do celular para o topo (`js/text-size.js`). O site funciona sem eles.
 - [ ] **5. Testar** — os testes automáticos passam (HTML, acessibilidade, teclado, larguras de 320 a 1440px, texto a 200%). **Falta** o teste manual em um celular de verdade e com o VoiceOver (seção 4).
 - [x] **6. Salvar versões** — em dia: tudo está commitado na `main`.
@@ -69,7 +69,7 @@ Marque aqui conforme avançar.
 - [docs/revisao-do-design.md](docs/revisao-do-design.md): o que o design tem, tokens, contraste medido e o que ajustar no Figma.
 - [docs/figma-atualizacoes.md](docs/figma-atualizacoes.md): o que mudou no Figma em 13/10/2026 e os limites do que foi feito.
 - [docs/design-vs-codigo.md](docs/design-vs-codigo.md): cada diferença entre o Figma e o código, com o motivo, e como mantê-los alinhados.
-- [docs/responsivo.md](docs/responsivo.md): como o site se adapta a telas pequenas (proposta aguardando aprovação).
+- [docs/responsivo.md](docs/responsivo.md): como o site se adapta a telas pequenas (aprovado em 13/10/2026).
 
 ## 4. Acessibilidade
 
@@ -172,7 +172,7 @@ Checklist antes de publicar:
 - [x] `npm run check` sem problemas
 - [ ] Teste manual feito, em um celular de verdade e com o VoiceOver
 - [ ] Trocar o que é provisório (lista completa em [docs/design-vs-codigo.md](docs/design-vs-codigo.md), seção 6): endereço real do LinkedIn, links `#` dos cartões, textos "Sample project cards…" e "Illustrative concept", seção "Skills"
-- [ ] Trocar `EMAIL@EXAMPLE.COM` pelo e-mail real nos links `mailto:` (aba Contact em todas as páginas e "Get in touch" em projects.html)
+- [ ] Conferir se `larissadidone@gmail.com` é o e-mail que você quer deixar público nos links `mailto:` (aba Contact e "Get in touch")
 - [x] `<title>` e `<meta name="description">` em cada página (conferir o texto final)
 - [ ] Favicon e imagem de compartilhamento (Open Graph)
 - [ ] Página 404
@@ -197,7 +197,7 @@ larididone/
 │   ├── decisoes.md          ← registro das decisões do projeto e das pendências
 │   ├── revisao-do-design.md ← revisão do Figma: tokens, contraste, ajustes
 │   ├── design-vs-codigo.md  ← onde e por que o código difere do Figma
-│   ├── responsivo.md        ← proposta para telas pequenas
+│   ├── responsivo.md        ← como o site se adapta a telas pequenas
 │   └── imagens/             ← comparações Figma × código e folhas de redimensionamento
 ├── scripts/a11y.mjs         ← o verificador de acessibilidade
 ├── package.json             ← lista de ferramentas e comandos (npm)

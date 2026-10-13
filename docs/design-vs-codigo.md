@@ -85,7 +85,6 @@ Em todos estes casos o Figma tinha duas versões ou um detalhe que parece aciden
 - LinkedIn: o endereço é genérico (`linkedin.com`) em About.
 - Textos do Figma que parecem notas: "Sample project cards — replace these concepts…" e "Illustrative concept".
 - "Skills" repete três linhas de "As a manager".
-- `EMAIL@EXAMPLE.COM`: o e-mail real dos links `mailto:` (D11).
 - Texto da Home: usei o da página ("Hello, I’m Lari. I lead designers through change…"), não o da variante "Welcome, I’m Lari…". Me avise se o texto final for o outro.
 - Rodapé: "2026 Lari Didone" está sem o símbolo ©, como no Figma.
 

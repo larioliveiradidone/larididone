@@ -30,7 +30,7 @@ Três telas de 375px (Home, Projects, About) desenhadas **a partir do site já c
 | `Mobile/Footer` | n/a                                 | uma instância em cada tela                                                                 |
 | `Mobile/Card`   | `Art` = Cards · Rows                | 4 instâncias em Projects; o texto e a cor da ilustração são sobrescritos em cada instância |
 
-O que mostram: título fluido, cartões em 1 coluna, rótulos e rodapé empilhados e margens de 16px (a proposta de [responsivo.md](responsivo.md), ainda não aprovada por você: se mudar, as telas mudam).
+O que mostram: título fluido, cartões em 1 coluna, rótulos e rodapé empilhados e margens de 16px (aprovados em 13/10/2026, D12: se mudar, as telas mudam).
 
 ## 4. Limites, para você não se surpreender
 
