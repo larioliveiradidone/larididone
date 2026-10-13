@@ -174,7 +174,8 @@ Checklist antes de publicar:
 - [ ] Trocar o que é provisório (lista completa em [docs/design-vs-codigo.md](docs/design-vs-codigo.md), seção 6): endereço real do LinkedIn, links `#` dos cartões, textos "Sample project cards…" e "Illustrative concept", seção "Skills"
 - [ ] Conferir se `larissadidone@gmail.com` é o e-mail que você quer deixar público nos links `mailto:` (aba Contact e "Get in touch")
 - [x] `<title>` e `<meta name="description">` em cada página (conferir o texto final)
-- [ ] Favicon e imagem de compartilhamento (Open Graph)
+- [x] Favicon (`favicon.ico`, "LD" numa janela, 16×16px; D13)
+- [ ] Imagem de compartilhamento (Open Graph)
 - [ ] Página 404
 - [ ] Separar o `larididone` em um repositório próprio
 

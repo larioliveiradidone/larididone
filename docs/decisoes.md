@@ -90,6 +90,13 @@ Datas no formato dia/mês/ano. ✅ = decisão sua · 🔧 = padrão que adotei (
 - **Capturas:** refeitas em 13/10/2026 (corpo em 16px, sem a página Contact): [Home](imagens/responsivo-home.png) · [About](imagens/responsivo-about.png) · [Projects](imagens/responsivo-projects.png).
 - **Continua em aberto:** o teste em celular de verdade e com o VoiceOver (final do projeto).
 
+### D13. Favicon: "LD" numa janela retrô — 13/10/2026
+
+- **Decisão:** o favicon é o arquivo que você fez, `favicon.ico` (16×16px, 16 cores): as letras "LD" em rosa dentro de uma janela mint, o mesmo vocabulário da janela da Home.
+- **Onde:** [`favicon.ico`](../favicon.ico) na raiz, ligado por `<link rel="icon" href="favicon.ico" sizes="16x16">` em todas as páginas.
+- **Limite conhecido:** só existe o tamanho 16×16. Em telas de alta densidade e nas abas do navegador ele será ampliado e pode ficar borrado, e o iPhone ("adicionar à tela de início") e o Android pedem ícones maiores (180px e 192px). Isso pode ser resolvido depois com um PNG ou SVG maior; não é obrigatório.
+- **Não testado:** não vi o ícone na aba de um navegador de verdade (só o arquivo, convertido para imagem).
+
 ## 2. Padrões que adotei (você pode mudar) 🔧
 
 | Padrão                                              | Por quê                                                                                                                                                         | Onde                                                         |
@@ -119,7 +126,7 @@ Atualizado em 13/10/2026, depois da sua revisão da lista.
 | Teste em celular de verdade e com o VoiceOver                                               | Final do projeto       | Principalmente a dock com a barra do Safari embaixo            |
 | ~~Aprovar o resto do redimensionamento (título fluido, cartões, rótulos, rodapé, margens)~~ | ✅ Aprovado (D12)      | Checklist em [responsivo.md](responsivo.md)                    |
 | Separar o repositório                                                                       | Antes de publicar (D8) |                                                                |
-| Favicon, imagem de compartilhamento e página 404                                            | Antes de publicar      | Checklist no [README](../README.md), seção 7                   |
+| Imagem de compartilhamento e página 404 (o favicon já existe, D13)                          | Antes de publicar      | Checklist no [README](../README.md), seção 7                   |
 
 ### Em andamento ou esperando uma escolha sua
 

@@ -77,7 +77,7 @@ Em todos estes casos o Figma tinha duas versões ou um detalhe que parece aciden
 - **Mobile:** agora há telas no Figma (página Mobile (375)), mas desenhadas a partir do código. **Tablet** continua sem desenho. Proposta completa em [responsivo.md](responsivo.md). O **menu do celular** é uma dock flutuante no rodapé da tela (escolha sua, 08/10), com uma faixa no topo como reserva para janelas baixas e texto muito grande. Existe um pequeno script para isso (`js/text-size.js`).
 - **Estados:** foco e hover já estão na página States do Figma; **erro e sucesso do formulário** ainda não existem.
 - **Título e descrição** de cada página (`<title>`, `<meta description>`), escritos a partir dos textos do Figma.
-- **Favicon, imagem de compartilhamento e página 404.**
+- **Imagem de compartilhamento e página 404.** O favicon já existe (D13).
 
 ## 6. Conteúdo provisório (resolver antes de publicar)
 
