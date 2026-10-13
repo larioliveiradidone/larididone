@@ -58,6 +58,19 @@ Datas no formato dia/mês/ano. ✅ = decisão sua · 🔧 = padrão que adotei (
 - **Situação hoje:** o Git está na pasta `~/Documents/codes`. O `larididone` não tem `.git` próprio e todos os commits só têm arquivos dele. O `dona-da-dona` tem um histórico separado na mesma pasta.
 - **Plano combinado:** guardar uma cópia de segurança do histórico, recriar os commits num repositório dentro do `larididone` e aposentar (ou deixar de rastrear) o repositório antigo. O `dona-da-dona` não é tocado.
 
+### D9. Estudos de caso: três modelos com a ficha "Client · Role · Skills" — 13/10/2026
+
+- **Pedido:** modelos para a página de cada projeto, com uma área de dados do tipo "Client / Role / Skills".
+- **O que foi feito:** três modelos em [`modelos/`](../modelos/), todos com a mesma ficha (Client, Role, Skills, Year) e as mesmas seções (Overview, The problem, What I did, The outcome), mudando só a **posição e o aspecto** da ficha:
+  - **A, faixa:** os dados em colunas logo abaixo do título. Compacta; o leitor vê tudo antes de rolar.
+  - **B, rótulo à esquerda:** a ficha e as seções seguem o padrão das páginas About e Contact. É a mais coerente com o resto do site.
+  - **C, ficha técnica:** uma caixa lavanda com barra de título e linhas pontilhadas, no estilo retrô da janela da Home. A mais marcante.
+- **Acessibilidade:** a ficha é uma lista de definição (`<dl>`), que o leitor de tela anuncia como "Client: nome". Imagens têm `<figcaption>` e texto alternativo; o texto entre colchetes é para você trocar. As páginas têm `noindex` e não entram na navegação.
+- **Imagens:** [A desktop](imagens/modelo-estudo-de-caso-a-desktop.png) · [B desktop](imagens/modelo-estudo-de-caso-b-desktop.png) · [C desktop](imagens/modelo-estudo-de-caso-c-desktop.png) (e as versões `-celular`).
+- **Minha recomendação:** B para estudos longos (repete um padrão que o leitor já aprendeu), ou C se quiser que a ficha seja a "assinatura" visual das páginas.
+- **Pendente:** você escolher. Depois, o CSS escolhido passa para `styles.css`, os outros modelos saem e o modelo vira o molde de cada projeto real.
+- **Onde:** [`css/case-study.css`](../css/case-study.css).
+
 ## 2. Padrões que adotei (você pode mudar) 🔧
 
 | Padrão                                              | Por quê                                                                                                                                                         | Onde                                                         |
@@ -69,7 +82,7 @@ Datas no formato dia/mês/ano. ✅ = decisão sua · 🔧 = padrão que adotei (
 | **Correções de acessibilidade além do Figma**       | Borda dos campos `#17847a`, anel de foco de 2px em `#0d0081`, texto dos campos em 16px, hover do botão, link "Pular para o conteúdo"                            | [design-vs-codigo.md](design-vs-codigo.md), seção 2          |
 | **Onde o Figma era inconsistente, escolhi um lado** | Altura da navegação, ícones das abas, versão do rodapé, tamanho dos rótulos e outros                                                                            | [design-vs-codigo.md](design-vs-codigo.md), seção 3          |
 | **Redimensionamento: um ponto de quebra (640px)**   | Título fluido, cartões em 1 coluna, rótulos e rodapé empilhados, margens de 16px. **Implementado como proposta; aguarda sua aprovação explícita**               | [responsivo.md](responsivo.md)                               |
-| **Texto do corpo em 14px**                          | É o que está no Figma (em `rem`). 16px é recomendação, não exigência da WCAG                                                                                    | `--fs-body` em `css/tokens.css`                              |
+| **Texto do corpo em 14px** (em avaliação, seção 6)  | É o que está no Figma (em `rem`). 16px é recomendação, não exigência da WCAG                                                                                    | `--fs-body` em `css/tokens.css`                              |
 | **Texto da Home: a versão da página**               | "Hello, I’m Lari. I lead designers through change…", e não a variante "Welcome, I’m Lari…"                                                                      | `index.html`                                                 |
 | **Sem Stylelint**                                   | A dependência dele gerava 6 avisos de segurança no `npm audit`, sem correção disponível; o VS Code já valida o CSS                                              | Configuração do projeto                                      |
 | **Ferramentas de qualidade**                        | Prettier com 100 colunas; validador de HTML compatível com o Prettier (aceita `role="list"`); auditoria de acessibilidade própria, com o axe-core, em português | `.prettierrc.json`, `.htmlvalidate.json`, `scripts/a11y.mjs` |
@@ -77,21 +90,68 @@ Datas no formato dia/mês/ano. ✅ = decisão sua · 🔧 = padrão que adotei (
 
 ## 3. Pendências ⏳
 
-| Pendência                                                                               | Quem                          | Observação                                                   |
-| --------------------------------------------------------------------------------------- | ----------------------------- | ------------------------------------------------------------ |
-| Aprovar o resto do redimensionamento (título fluido, cartões, rótulos, rodapé, margens) | Você                          | Checklist em [responsivo.md](responsivo.md)                  |
-| Atualizar o Figma com as correções e a dock                                             | Você (ou eu, com o seu OK)    | Lista em [design-vs-codigo.md](design-vs-codigo.md), seção 2 |
-| Desenhar as telas de celular no Figma                                                   | Você (ou eu, com o seu OK)    | [responsivo.md](responsivo.md)                               |
-| Conteúdo real: endereço do LinkedIn, projetos e páginas dos estudos de caso             | Você                          | Os links dos cartões são `#` e o LinkedIn é genérico         |
-| Teste em um celular de verdade e com o VoiceOver                                        | Você                          | Principalmente a dock com a barra do Safari embaixo          |
-| Definir como o formulário envia mensagens                                               | Você                          | Veja D6                                                      |
-| Texto final da Home e projetos reais                                                    | Você                          |                                                              |
-| Corpo do texto: manter 14px ou subir para 16px                                          | Você                          | Recomendável, não obrigatório                                |
-| Separar o repositório                                                                   | Você decide quando            | Antes de publicar (D8)                                       |
-| Antes de publicar: favicon, imagem de compartilhamento, página 404                      | Combinar quando chegar a hora | Checklist no [README](../README.md), seção 7                 |
+Atualizado em 13/10/2026, depois da sua revisão da lista.
+
+### Adiadas de propósito (você decidiu esperar)
+
+| Pendência                                                                               | Quando                      | Observação                                                               |
+| --------------------------------------------------------------------------------------- | --------------------------- | ------------------------------------------------------------------------ |
+| Conteúdo real: endereço do LinkedIn, projetos e páginas dos estudos de caso             | Daqui a um tempo            | Os links dos cartões são `#`. Os modelos já estão prontos (D9)           |
+| Teste em celular de verdade e com o VoiceOver                                           | Final do projeto            | Principalmente a dock com a barra do Safari embaixo                      |
+| Aprovar o resto do redimensionamento (título fluido, cartões, rótulos, rodapé, margens) | Por enquanto fica como está | Segue valendo como proposta; checklist em [responsivo.md](responsivo.md) |
+| Separar o repositório                                                                   | Antes de publicar (D8)      |                                                                          |
+| Favicon, imagem de compartilhamento e página 404                                        | Antes de publicar           | Checklist no [README](../README.md), seção 7                             |
+
+### Em andamento ou esperando uma escolha sua
+
+| Pendência                                                             | Situação                                                                                 |
+| --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| Escolher um modelo de estudo de caso (A, B ou C)                      | Os três estão prontos em `modelos/`. Veja D9                                             |
+| Como o formulário envia mensagens                                     | Alternativas na seção 5. Falta escolher                                                  |
+| Corpo do texto: 14px ou 16px                                          | Argumentos e comparação na seção 6. Falta escolher                                       |
+| Texto final da Home e projetos reais                                  | Você escreve; os modelos servem de roteiro                                               |
+| Atualizar o Figma (cor do link, borda dos campos, foco, hovers, dock) | Você deu o OK em 13/10/2026; acompanhe em [figma-atualizacoes.md](figma-atualizacoes.md) |
+| Desenhar as telas de celular no Figma                                 | Você deu o OK em 13/10/2026; acompanhe em [figma-atualizacoes.md](figma-atualizacoes.md) |
 
 ## 4. Como mudar uma decisão
 
 Diga ao Claude o que mudou. Ele atualiza o código, a documentação afetada e este registro.
 
 **Não apague a decisão antiga:** registre a nova com a data e marque a anterior como _substituída_. Assim dá para entender o caminho que o projeto percorreu.
+
+## 5. Análise: como o formulário envia mensagens (D6)
+
+Seus critérios: **menor custo** e **acessibilidade**. O site é estático (sem servidor), então enviar uma mensagem exige um serviço de fora ou um link de e-mail.
+
+| Alternativa                                                                                       | Custo                                                                          | Acessibilidade                                                                                                                                | Pontos de atenção                                                                                                                                                                                                            |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1. Só um link de e-mail** (`mailto:`) e tirar o formulário                                      | Zero                                                                           | A melhor: nada para errar                                                                                                                     | Abre o programa de e-mail da pessoa (quem usa só webmail estranha). O endereço fica público e recebe spam. Foge do desenho do Figma                                                                                          |
+| **2. Formulário HTML + serviço de formulários** (Formspree, Web3Forms, Netlify Forms ou parecido) | Plano grátis, com limite mensal de mensagens (confira os limites atuais antes) | Boa, se eu fizer certo: `<label>` em cada campo, `required`, mensagens de erro em texto, página de agradecimento. Funciona **sem JavaScript** | A mensagem passa por uma empresa de terceiros: precisa de uma linha de privacidade (você mora na Europa, vale a LGPD/GDPR). Anti-spam por campo invisível (honeypot), **sem CAPTCHA** (CAPTCHA é barreira de acessibilidade) |
+| **3. Função própria** (ex.: Cloudflare Workers enviando e-mail)                                   | Grátis em volume pequeno                                                       | Igual à 2                                                                                                                                     | Mais trabalho e manutenção para um resultado igual. Só vale se você quiser aprender isso                                                                                                                                     |
+| **4. Formulário + `mailto:` como reserva** (junção de 2 e 1)                                      | Grátis                                                                         | Boa                                                                                                                                           | Mostrar o e-mail ao lado do formulário ajuda quem não consegue usar o formulário                                                                                                                                             |
+
+**Recomendação:** a alternativa 2, com o e-mail visível como reserva (4). Mantém o design do Figma, custa zero e, feita com HTML nativo, é tão acessível quanto a alternativa 1. A alternativa 1 é a escolha certa se você prefere **nenhum** terceiro recebendo dados.
+
+**Antes de conectar**, o que preciso de você: qual e-mail recebe as mensagens e qual serviço você prefere (posso comparar os planos atuais quando chegar a hora).
+
+## 6. Análise: corpo do texto em 14px ou 16px
+
+**Fato importante:** a WCAG **não** exige 16px. Ela exige que o texto possa ser ampliado até 200% sem perder conteúdo, e o site já cumpre isso (tamanhos em `rem`, que respeitam a fonte escolhida no navegador). Então é uma decisão de conforto e de design, não de conformidade.
+
+**Argumentos para 16px**
+
+1. **Leitura longa.** Os estudos de caso são textos de vários parágrafos; 16px é o tamanho que o navegador usa por padrão e o que mais gente lê sem esforço, principalmente com baixa visão ou cansaço visual.
+2. **Telas de celular.** O sistema já usa 16px nos campos do formulário (para o iPhone não dar zoom sozinho). Texto de corpo menor que os campos causa um salto de tamanho dentro da mesma página.
+3. **A Space Grotesk é larga e de aberturas pequenas**, e o negrito/peso do corpo no Figma é denso; um pouco mais de tamanho dá mais respiro entre as letras.
+4. **Linha mais curta:** com 14px cada linha do painel de 686px chega perto de 95 caracteres; com 16px cai para cerca de 80, mais perto do confortável (45–80).
+
+**Argumentos para ficar em 14px**
+
+1. **É o desenho do Figma**, e o visual retrô e compacto depende dele. Com 16px, as páginas ficam mais compridas e os cartões de projeto (descrição de 4 linhas) crescem.
+2. É um tamanho comum em interfaces, aceitável se o contraste é alto (aqui é) e se o zoom funciona (funciona).
+
+**Comparação lado a lado (About):** [14px](imagens/corpo-14px.png) · [16px](imagens/corpo-16px.png).
+
+**Meio-termo possível:** 14px nos cartões e rótulos (peças de interface) e 16px só nos textos longos (estudos de caso e About). Funciona, mas cria dois tamanhos de corpo para manter.
+
+**Minha recomendação:** 16px nos textos longos (estudos de caso). Para as demais páginas, a decisão é visual: veja as imagens e escolha. Qualquer opção que você escolher, registro aqui e no [design-vs-codigo.md](design-vs-codigo.md).

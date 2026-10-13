@@ -8,7 +8,7 @@
   },
   "scripts": {
     "check": "run-s --continue-on-error check:html check:a11y",
-    "check:html": "html-validate \"*.html\"",
+    "check:html": "html-validate \"*.html\" \"modelos/*.html\"",
     "check:a11y": "node scripts/a11y.mjs",
     "format": "prettier --write ."
   },

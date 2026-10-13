@@ -1,0 +1,144 @@
+/*
+  MODELOS DE ESTUDO DE CASO
+  -------------------------
+  Três propostas para a página de um projeto (pasta modelos/). Todas usam a mesma
+  "ficha" de dados (Client, Role, Skills...), escrita como lista de definição (<dl>):
+  assim o leitor de tela anuncia "Client: Acme" como par rótulo/valor.
+
+  Depois que você escolher um modelo, o CSS dele passa para styles.css e os outros saem.
+*/
+
+/* ---------- Peças em comum ---------- */
+.meta {
+  display: grid;
+  gap: var(--space-4) var(--space-6);
+  margin: 0;
+}
+
+.meta__item {
+  display: grid;
+  gap: var(--space-1);
+  align-content: start;
+}
+
+.meta dt {
+  color: var(--color-text-secondary);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.meta dd {
+  margin: 0;
+  color: var(--black);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.cs-title {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.cs-kicker {
+  color: var(--color-text-secondary);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  line-height: 1.75rem;
+}
+
+/* Imagem do projeto. Troque o <svg> por <img src alt="..."> quando tiver a arte. */
+.cs-figure {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.cs-figure__art {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-default);
+}
+
+.cs-figure figcaption {
+  color: var(--color-text-secondary);
+  font-size: var(--fs-small);
+  line-height: 1.5;
+}
+
+.cs-pager {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-default);
+}
+
+.cs-pager a {
+  display: inline-block;
+  font-size: var(--fs-label);
+  font-weight: 500;
+  line-height: 1.75rem;
+}
+
+/* ---------- Modelo A: faixa de dados logo abaixo do título ---------- */
+.meta--strip {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr));
+  padding-block: var(--space-4);
+  border-block: 1px solid var(--color-border-default);
+}
+
+/* ---------- Modelo B: rótulo à esquerda, como nas páginas About e Contact ---------- */
+.meta--side {
+  grid-template-columns: 1fr;
+}
+
+/* ---------- Modelo C: ficha técnica, com pontilhado entre rótulo e valor ---------- */
+.spec {
+  display: grid;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--pink-purple-500);
+}
+
+.spec__title {
+  padding: var(--space-2) var(--space-4);
+  color: var(--pink-purple-700);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--pink-purple-500);
+}
+
+.meta--spec {
+  gap: 0;
+  padding: var(--space-2) var(--space-4);
+}
+
+.meta--spec .meta__item {
+  grid-template-columns: 1fr;
+  padding-block: var(--space-2);
+  border-bottom: 1px dotted var(--pink-purple-500);
+}
+
+.meta--spec .meta__item:last-child {
+  border-bottom: 0;
+}
+
+@media (min-width: 40em) {
+  .meta--spec .meta__item {
+    grid-template-columns: 9.0625rem minmax(0, 1fr);
+    gap: var(--space-4);
+    align-items: baseline;
+  }
+
+  .meta--spec dt {
+    line-height: 1.5;
+  }
+}
