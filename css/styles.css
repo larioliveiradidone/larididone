@@ -228,6 +228,7 @@ main {
 
 .site-footer {
   padding: 1.25rem var(--space-4);
+  font-size: var(--fs-footer);
 }
 
 .site-footer__inner {
@@ -455,7 +456,7 @@ main {
 }
 
 .card__text {
-  min-height: 5.25rem;
+  min-height: 6rem; /* 4 linhas de 24px (no Figma de 14px eram 84px) */
 }
 
 .card__link {

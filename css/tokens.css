@@ -59,8 +59,9 @@
   --fs-lead: 1.25rem; /* 20px */
   --fs-nav: 1.125rem; /* 18px */
   --fs-label: 1rem; /* 16px */
-  --fs-body: 0.875rem; /* 14px (estilo Body/Base) */
+  --fs-body: 1rem; /* 16px (estilo Body/Base). ≠ FIGMA até 13/10/2026: lá era 14px; decisão sua, veja D10 */
   --fs-small: 0.75rem; /* 12px */
+  --fs-footer: 0.875rem; /* 14px: o rodapé do Figma continua em 14px (o corpo subiu para 16px) */
 
   /* ---------- Espaços (4 · 8 · 12 · 16 · 24 · 32 · 40 · 48 px) ---------- */
   --space-1: 0.25rem;

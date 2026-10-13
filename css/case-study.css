@@ -1,11 +1,10 @@
 /*
-  MODELOS DE ESTUDO DE CASO
-  -------------------------
-  Três propostas para a página de um projeto (pasta modelos/). Todas usam a mesma
-  "ficha" de dados (Client, Role, Skills...), escrita como lista de definição (<dl>):
-  assim o leitor de tela anuncia "Client: Acme" como par rótulo/valor.
-
-  Depois que você escolher um modelo, o CSS dele passa para styles.css e os outros saem.
+  ESTUDO DE CASO (modelo A, escolhido em 13/10/2026)
+  --------------------------------------------------
+  A "ficha" de dados (Client, Role, Skills, Year) é uma lista de definição (<dl>): o leitor
+  de tela anuncia "Client: Acme" como par rótulo/valor. Os ícones são do Phosphor (MIT,
+  veja assets/icons/PHOSPHOR-LICENSE.txt) e são só decoração: entram por CSS, então não
+  existem para o leitor de tela. Cada ícone herda a cor do texto do rótulo.
 */
 
 /* ---------- Peças em comum ---------- */
@@ -88,57 +87,41 @@
   line-height: 1.75rem;
 }
 
-/* ---------- Modelo A: faixa de dados logo abaixo do título ---------- */
+/* ---------- Faixa de dados logo abaixo do título ---------- */
 .meta--strip {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr));
   padding-block: var(--space-4);
   border-block: 1px solid var(--color-border-default);
 }
 
-/* ---------- Modelo B: rótulo à esquerda, como nas páginas About e Contact ---------- */
-.meta--side {
-  grid-template-columns: 1fr;
+/* ---------- Ícones do Phosphor ao lado de cada rótulo ---------- */
+.meta dt {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
-/* ---------- Modelo C: ficha técnica, com pontilhado entre rótulo e valor ---------- */
-.spec {
-  display: grid;
-  background: var(--color-bg-secondary);
-  border: 1px solid var(--pink-purple-500);
+.meta dt::before {
+  content: "";
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: currentColor;
+  mask: var(--icon) center / contain no-repeat;
 }
 
-.spec__title {
-  padding: var(--space-2) var(--space-4);
-  color: var(--pink-purple-700);
-  font-size: var(--fs-label);
-  font-weight: 600;
-  line-height: 1.5;
-  border-bottom: 1px solid var(--pink-purple-500);
+.meta__item--client {
+  --icon: url("../assets/icons/ph-client.svg");
 }
 
-.meta--spec {
-  gap: 0;
-  padding: var(--space-2) var(--space-4);
+.meta__item--role {
+  --icon: url("../assets/icons/ph-role.svg");
 }
 
-.meta--spec .meta__item {
-  grid-template-columns: 1fr;
-  padding-block: var(--space-2);
-  border-bottom: 1px dotted var(--pink-purple-500);
+.meta__item--skills {
+  --icon: url("../assets/icons/ph-skills.svg");
 }
 
-.meta--spec .meta__item:last-child {
-  border-bottom: 0;
-}
-
-@media (min-width: 40em) {
-  .meta--spec .meta__item {
-    grid-template-columns: 9.0625rem minmax(0, 1fr);
-    gap: var(--space-4);
-    align-items: baseline;
-  }
-
-  .meta--spec dt {
-    line-height: 1.5;
-  }
+.meta__item--year {
+  --icon: url("../assets/icons/ph-year.svg");
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>[Project name] — Case study (template C) — Lari Didone</title>
+    <title>[Project name] — Case study (template) — Lari Didone</title>
     <meta name="robots" content="noindex" />
     <link
       rel="preload"
@@ -28,7 +28,11 @@
             <a class="tab tab--clap" href="../projects.html" aria-current="true">Projects</a>
           </li>
           <li><a class="tab tab--smile" href="../about.html">About</a></li>
-          <li><a class="tab tab--chat" href="../contact.html">Contact</a></li>
+          <li>
+            <a class="tab tab--chat" href="mailto:EMAIL@EXAMPLE.COM"
+              >Contact<span class="visually-hidden"> (opens your email app)</span></a
+            >
+          </li>
         </ul>
       </nav>
     </header>
@@ -43,33 +47,30 @@
           </p>
         </div>
 
-        <section class="spec" aria-labelledby="spec-title">
-          <h2 class="spec__title" id="spec-title">Project facts</h2>
-          <dl class="meta meta--spec">
-            <div class="meta__item">
-              <dt>Client</dt>
-              <dd>[Client or company name]</dd>
-            </div>
-            <div class="meta__item">
-              <dt>Role</dt>
-              <dd>[Your role, e.g. Lead Product Designer]</dd>
-            </div>
-            <div class="meta__item">
-              <dt>Skills</dt>
-              <dd>
-                <ul class="skills" role="list">
-                  <li>[Research]</li>
-                  <li>[UX design]</li>
-                  <li>[Design systems]</li>
-                </ul>
-              </dd>
-            </div>
-            <div class="meta__item">
-              <dt>Year</dt>
-              <dd>[2025]</dd>
-            </div>
-          </dl>
-        </section>
+        <dl class="meta meta--strip">
+          <div class="meta__item meta__item--client">
+            <dt>Client</dt>
+            <dd>[Client or company name]</dd>
+          </div>
+          <div class="meta__item meta__item--role">
+            <dt>Role</dt>
+            <dd>[Your role, e.g. Lead Product Designer]</dd>
+          </div>
+          <div class="meta__item meta__item--skills">
+            <dt>Skills</dt>
+            <dd>
+              <ul class="skills" role="list">
+                <li>[Research]</li>
+                <li>[UX design]</li>
+                <li>[Design systems]</li>
+              </ul>
+            </dd>
+          </div>
+          <div class="meta__item meta__item--year">
+            <dt>Year</dt>
+            <dd>[2025]</dd>
+          </div>
+        </dl>
 
         <figure class="cs-figure">
           <svg

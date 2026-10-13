@@ -14,7 +14,7 @@ Comparei o render do Figma (tamanho real, 1×) com o site no Chrome, medindo as 
 | Fundo pontilhado                         | tile 16×8, pontos 2×2 a 38% | idêntico          | **0**         | Medi as cores dos pixels do Figma. A imagem de diferença fica preta no fundo                                                                                          |
 | Cartões de projeto (4)                   | 314×486                     | idêntico          | **0**         | Posições nas colunas também idênticas                                                                                                                                 |
 | Painel Projects                          | 686×1314                    | 686×1314          | **0**         |                                                                                                                                                                       |
-| Painel Contact                           | 686×1058                    | 686×1058          | **0**         |                                                                                                                                                                       |
+| Painel Contact                           | 686×1058                    | removido (D11)    | n/a           |                                                                                                                                                                       |
 | Campos do formulário (4)                 | 475×52 e 475×156            | idêntico          | **0**         |                                                                                                                                                                       |
 | Painel About                             | 686×1057                    | 686×1001          | **−56px**     | −40: sobra uma linha vazia de 36px na grade de "Skills" no Figma. −16: o rótulo "Relevant Links" está com 22px no Figma e quebra em 2 linhas; usei o estilo H2 (20px) |
 | Botão "Send message"                     | 177×52                      | 153×52            | −24px         | No Figma o texto tem uma moldura fixa de 153px; no código o botão acompanha o texto                                                                                   |
@@ -29,17 +29,19 @@ Imagens lado a lado (Figma · Código · Diferença; **preto = igual**): [Home](
 
 São mudanças de acessibilidade ou necessidades da web. Para o Figma e o código voltarem a concordar, é o **Figma** que precisa mudar.
 
-| #   | Item                         | Figma                                                 | Código                                                    | Motivo                                                                                              |
-| --- | ---------------------------- | ----------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| 1   | **Cor dos links**            | `color/text/link` `#d946b0` (3,62:1; 3,11:1 no hover) | `#a31585` (`pink-purple/500`): 6,57:1 e 5,65:1            | WCAG 1.4.3. **Decisão sua.** Os ícones já eram `#a31585`, então texto e ícone agora têm a mesma cor |
-| 2   | **Borda dos campos**         | `color/border/default` `#38ccbe` (1,87:1)             | `#17847a` (`mint/600`): 4,27:1                            | WCAG 1.4.11 pede 3:1 para a borda de um campo                                                       |
-| 3   | **Estado de foco**           | não existe                                            | anel de 2px em `indigo/500`, 2px de afastamento (14,79:1) | WCAG 2.4.7                                                                                          |
-| 4   | **Texto dos campos**         | 14px                                                  | 16px (o digitado em `text/primary`)                       | O Safari do iPhone dá zoom sozinho em campos com menos de 16px                                      |
-| 5   | **Hover do botão**           | não existe                                            | fundo `indigo/700`                                        | Feedback ao passar o mouse                                                                          |
-| 6   | **Hover dos links de texto** | não existe                                            | sublinhado                                                | Idem                                                                                                |
-| 7   | **"Skip to main content"**   | não existe                                            | link visível só quando recebe foco (primeiro Tab)         | WCAG 2.4.1: quem usa teclado pula a navegação                                                       |
+| #   | Item                              | Figma                                                 | Código                                                    | Motivo                                                                                              |
+| --- | --------------------------------- | ----------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| 1   | **Cor dos links**                 | `color/text/link` `#d946b0` (3,62:1; 3,11:1 no hover) | `#a31585` (`pink-purple/500`): 6,57:1 e 5,65:1            | WCAG 1.4.3. **Decisão sua.** Os ícones já eram `#a31585`, então texto e ícone agora têm a mesma cor |
+| 2   | **Borda dos campos**              | `color/border/default` `#38ccbe` (1,87:1)             | `#17847a` (`mint/600`): 4,27:1                            | WCAG 1.4.11 pede 3:1 para a borda de um campo                                                       |
+| 3   | **Estado de foco**                | não existe                                            | anel de 2px em `indigo/500`, 2px de afastamento (14,79:1) | WCAG 2.4.7                                                                                          |
+| 4   | **Texto do corpo (e dos campos)** | 14px                                                  | 16px em todo o corpo, a pedido seu (D10)                  | Leitura mais confortável nos textos longos e sem zoom automático do Safari nos campos (D10)         |
+| 5   | **Hover do botão**                | não existe                                            | fundo `indigo/700`                                        | Feedback ao passar o mouse                                                                          |
+| 6   | **Hover dos links de texto**      | não existe                                            | sublinhado                                                | Idem                                                                                                |
+| 7   | **"Skip to main content"**        | não existe                                            | link visível só quando recebe foco (primeiro Tab)         | WCAG 2.4.1: quem usa teclado pula a navegação                                                       |
 
-**Alinhado no Figma em 13/10/2026** (itens 1 a 5): variável `color/text/link` trocada, `color/border/input` e `color/focus/ring` criadas, hover do botão em `indigo/700`, campos com texto de 16px, e estados desenhados na página States. O item 6 (sublinhado no hover) e o item 7 (Skip) também estão na página States. Detalhes e limites em [figma-atualizacoes.md](figma-atualizacoes.md).
+**Alinhado no Figma em 13/10/2026** (itens 1 a 3 e 5 a 7; o item 4 ver abaixo): variável `color/text/link` trocada, `color/border/input` e `color/focus/ring` criadas, hover do botão em `indigo/700`, campos com texto de 16px, e estados desenhados na página States. O item 6 (sublinhado no hover) e o item 7 (Skip) também estão na página States. Detalhes e limites em [figma-atualizacoes.md](figma-atualizacoes.md).
+
+**Sobre o item 4 (16px):** o estilo `Body/Base` e a variável `font-size/body` do Figma passaram para 16px em 13/10/2026 (veja [figma-atualizacoes.md](figma-atualizacoes.md)). O **rodapé continua em 14px** (`--fs-footer`) para caber numa linha. Com o corpo maior os blocos de texto ficam mais altos: os cartões reservam 4 linhas de 24px (96px, no Figma de 14px eram 84px). Por isso as alturas das páginas medidas na seção 1 (08/10) mudaram e **não foram medidas de novo**.
 
 ## 3. Escolhas que fiz onde o próprio Figma era inconsistente
 
@@ -74,17 +76,16 @@ Em todos estes casos o Figma tinha duas versões ou um detalhe que parece aciden
 
 - **Mobile:** agora há telas no Figma (página Mobile (375)), mas desenhadas a partir do código. **Tablet** continua sem desenho. Proposta completa em [responsivo.md](responsivo.md). O **menu do celular** é uma dock flutuante no rodapé da tela (escolha sua, 08/10), com uma faixa no topo como reserva para janelas baixas e texto muito grande. Existe um pequeno script para isso (`js/text-size.js`).
 - **Estados:** foco e hover já estão na página States do Figma; **erro e sucesso do formulário** ainda não existem.
-- **Mensagem ao enviar o formulário:** "This form isn’t connected yet, so nothing was sent."
 - **Título e descrição** de cada página (`<title>`, `<meta description>`), escritos a partir dos textos do Figma.
 - **Favicon, imagem de compartilhamento e página 404.**
 
 ## 6. Conteúdo provisório (resolver antes de publicar)
 
 - Links `#` nos 4 cartões (precisam das páginas dos estudos de caso).
-- LinkedIn: o endereço é genérico (`linkedin.com`) em About e Contact.
+- LinkedIn: o endereço é genérico (`linkedin.com`) em About.
 - Textos do Figma que parecem notas: "Sample project cards — replace these concepts…" e "Illustrative concept".
 - "Skills" repete três linhas de "As a manager".
-- Formulário **sem função** (decisão sua, por enquanto).
+- `EMAIL@EXAMPLE.COM`: o e-mail real dos links `mailto:` (D11).
 - Texto da Home: usei o da página ("Hello, I’m Lari. I lead designers through change…"), não o da variante "Welcome, I’m Lari…". Me avise se o texto final for o outro.
 - Rodapé: "2026 Lari Didone" está sem o símbolo ©, como no Figma.
 

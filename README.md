@@ -39,9 +39,9 @@ Marque aqui conforme avançar.
 
 - [x] **0. Preparar o computador** — feito.
 - [ ] **1. Fechar o design no Figma** — **em andamento.** ([arquivo UI-Design](https://www.figma.com/design/kTQyYilEA2rApHxS9cB0Da/UI-Design); [revisão de acessibilidade do design](docs/revisao-do-design.md).) Em 13/10/2026 o Figma ganhou as telas de celular, os estados de foco e hover e os ajustes de cor ([docs/figma-atualizacoes.md](docs/figma-atualizacoes.md)); falta você conferir. Corrigir contraste no Figma custa minutos; corrigir depois de programado custa horas.
-- [x] **2. Escrever o HTML** — feito: as 4 páginas (Home, About, Projects, Contact), com títulos, listas e landmarks.
+- [x] **2. Escrever o HTML** — feito: as 3 páginas (Home, About, Projects) e o modelo de estudo de caso em `modelos/`. A aba Contact é um link `mailto:` (D11 em docs/decisoes.md), com títulos, listas e landmarks.
 - [x] **3. Estilizar com CSS** — feito: tokens em `css/tokens.css` e layout em `css/styles.css`. O menu do celular é uma dock flutuante no rodapé (escolha sua); falta aprovar o resto do comportamento em telas pequenas ([docs/responsivo.md](docs/responsivo.md)).
-- [x] **4. JavaScript só se for preciso** — feito, com dois scripts pequenos: o aviso do formulário de contato (`js/contact-form.js`) e a detecção de texto muito grande, que devolve o menu do celular para o topo (`js/text-size.js`). O site funciona sem eles.
+- [x] **4. JavaScript só se for preciso** — feito, com um script pequeno (a detecção de texto muito grande, que devolve o menu do celular para o topo (`js/text-size.js`). O site funciona sem eles.
 - [ ] **5. Testar** — os testes automáticos passam (HTML, acessibilidade, teclado, larguras de 320 a 1440px, texto a 200%). **Falta** o teste manual em um celular de verdade e com o VoiceOver (seção 4).
 - [x] **6. Salvar versões** — em dia: tudo está commitado na `main`.
 - [ ] **7. Publicar** (seção 7).
@@ -83,7 +83,7 @@ Marque aqui conforme avançar.
 - **Desenhe o estado de foco** de cada link e botão, bem visível. É o estado mais esquecido.
 - **Não use só cor** para comunicar algo (link, erro, selecionado): some sublinhado, ícone ou texto.
 - **Alvos de clique/toque:** no mínimo **24×24px** (ideal 44×44px no celular).
-- **Texto:** corpo a partir de 16px, entrelinha em torno de 1,5, linhas de no máximo ~75 caracteres. (O design atual usa 14px no corpo: é uma decisão em aberto em [docs/revisao-do-design.md](docs/revisao-do-design.md).)
+- **Texto:** corpo a partir de 16px, entrelinha em torno de 1,5, linhas de no máximo ~75 caracteres. (Decidido em 13/10/2026: o corpo é 16px, D10 em [docs/decisoes.md](docs/decisoes.md).)
 - **Texto sobre imagem ou fundo com padrão:** garanta o contraste no **pior ponto** do fundo, não só na cor principal.
 - **Planeje os títulos:** um H1 por página, depois H2, H3… em ordem.
 
@@ -172,7 +172,7 @@ Checklist antes de publicar:
 - [x] `npm run check` sem problemas
 - [ ] Teste manual feito, em um celular de verdade e com o VoiceOver
 - [ ] Trocar o que é provisório (lista completa em [docs/design-vs-codigo.md](docs/design-vs-codigo.md), seção 6): endereço real do LinkedIn, links `#` dos cartões, textos "Sample project cards…" e "Illustrative concept", seção "Skills"
-- [ ] Formulário de contato: conectar a um serviço de envio (ex.: Formspree, Netlify Forms) ou trocar por um link de e-mail. Hoje ele não envia nada
+- [ ] Trocar `EMAIL@EXAMPLE.COM` pelo e-mail real nos links `mailto:` (aba Contact em todas as páginas e "Get in touch" em projects.html)
 - [x] `<title>` e `<meta name="description">` em cada página (conferir o texto final)
 - [ ] Favicon e imagem de compartilhamento (Open Graph)
 - [ ] Página 404
@@ -182,16 +182,16 @@ Checklist antes de publicar:
 
 ```
 larididone/
-├── index.html, about.html, projects.html, contact.html   ← as páginas
+├── index.html, about.html, projects.html            ← as páginas
+├── modelos/estudo-de-caso.html                       ← molde de cada estudo de caso (modelo A)
 ├── css/
 │   ├── tokens.css           ← cores, tamanhos e espaços (espelham as variáveis do Figma)
 │   └── styles.css           ← layout, componentes e comportamento em telas pequenas
 ├── js/
-│   ├── contact-form.js      ← aviso do formulário (ele ainda não envia nada)
 │   └── text-size.js         ← detecta texto muito grande e devolve o menu do celular para o topo
 ├── assets/
 │   ├── fonts/               ← Space Grotesk, hospedada no site (licença OFL)
-│   ├── icons/               ← ícones exportados do Figma
+│   ├── icons/               ← ícones exportados do Figma e ícones Phosphor (`ph-*.svg`, licença MIT)
 │   └── pattern-dots.svg     ← fundo pontilhado
 ├── docs/
 │   ├── decisoes.md          ← registro das decisões do projeto e das pendências

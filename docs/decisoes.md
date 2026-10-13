@@ -37,7 +37,7 @@ Datas no formato dia/mês/ano. ✅ = decisão sua · 🔧 = padrão que adotei (
 - **Decisão:** são um elemento visual retrô e não funcionam como botões.
 - **Onde:** a barra de título da janela (`.window__bar`) fica escondida de leitores de tela e fora da ordem do Tab. A variante "fantasma" (texto repetido a 26%) não foi construída; se entrar no design, será puramente decorativa.
 
-### D6. O formulário de contato fica sem função por enquanto — 08/10/2026
+### D6. O formulário de contato fica sem função por enquanto — 08/10/2026 (_substituída pela D11_)
 
 - **Decisão:** a página mostra o formulário como no Figma, mas ele não envia nada. Um aviso substitui o envio.
 - **Onde:** [`js/contact-form.js`](../js/contact-form.js).
@@ -58,18 +58,30 @@ Datas no formato dia/mês/ano. ✅ = decisão sua · 🔧 = padrão que adotei (
 - **Situação hoje:** o Git está na pasta `~/Documents/codes`. O `larididone` não tem `.git` próprio e todos os commits só têm arquivos dele. O `dona-da-dona` tem um histórico separado na mesma pasta.
 - **Plano combinado:** guardar uma cópia de segurança do histórico, recriar os commits num repositório dentro do `larididone` e aposentar (ou deixar de rastrear) o repositório antigo. O `dona-da-dona` não é tocado.
 
-### D9. Estudos de caso: três modelos com a ficha "Client · Role · Skills" — 13/10/2026
+### D9. Estudos de caso: modelo A, com ícones do Phosphor — 13/10/2026
 
-- **Pedido:** modelos para a página de cada projeto, com uma área de dados do tipo "Client / Role / Skills".
-- **O que foi feito:** três modelos em [`modelos/`](../modelos/), todos com a mesma ficha (Client, Role, Skills, Year) e as mesmas seções (Overview, The problem, What I did, The outcome), mudando só a **posição e o aspecto** da ficha:
-  - **A, faixa:** os dados em colunas logo abaixo do título. Compacta; o leitor vê tudo antes de rolar.
-  - **B, rótulo à esquerda:** a ficha e as seções seguem o padrão das páginas About e Contact. É a mais coerente com o resto do site.
-  - **C, ficha técnica:** uma caixa lavanda com barra de título e linhas pontilhadas, no estilo retrô da janela da Home. A mais marcante.
-- **Acessibilidade:** a ficha é uma lista de definição (`<dl>`), que o leitor de tela anuncia como "Client: nome". Imagens têm `<figcaption>` e texto alternativo; o texto entre colchetes é para você trocar. As páginas têm `noindex` e não entram na navegação.
-- **Imagens:** [A desktop](imagens/modelo-estudo-de-caso-a-desktop.png) · [B desktop](imagens/modelo-estudo-de-caso-b-desktop.png) · [C desktop](imagens/modelo-estudo-de-caso-c-desktop.png) (e as versões `-celular`).
-- **Minha recomendação:** B para estudos longos (repete um padrão que o leitor já aprendeu), ou C se quiser que a ficha seja a "assinatura" visual das páginas.
-- **Pendente:** você escolher. Depois, o CSS escolhido passa para `styles.css`, os outros modelos saem e o modelo vira o molde de cada projeto real.
-- **Onde:** [`css/case-study.css`](../css/case-study.css).
+- **Decisão:** você escolheu o **modelo A**: a ficha de dados (Client, Role, Skills, Year) em colunas logo abaixo do título, e **um ícone do Phosphor para cada título**. Os modelos B (rótulo à esquerda) e C (ficha técnica) foram descartados e apagados.
+- **Ícones** (Phosphor, estilo _regular_, licença MIT em `assets/icons/PHOSPHOR-LICENSE.txt`): Client = `buildings`, Role = `identification-badge`, Skills = `toolbox`, Year = `calendar-blank`. Escolhi esses; se preferir outros, é só dizer.
+- **Acessibilidade:** a ficha é uma lista de definição (`<dl>`): o leitor de tela anuncia "Client: nome". Os ícones são decorativos e entram por CSS, então o leitor de tela não os vê; herdam a cor do rótulo (contraste 5,47:1 ou mais).
+- **Seções:** Overview, The problem, What I did, The outcome. Imagens com `<figcaption>`; o texto entre colchetes é para você trocar. A página tem `noindex` (some quando virar um projeto real).
+- **Onde:** [`modelos/estudo-de-caso.html`](../modelos/estudo-de-caso.html) e [`css/case-study.css`](../css/case-study.css). Imagens: [desktop](imagens/modelo-estudo-de-caso-desktop.png) · [celular](imagens/modelo-estudo-de-caso-celular.png).
+- **Próximo passo:** copiar o modelo para cada projeto real quando o conteúdo chegar.
+
+### D10. Corpo do texto em 16px — 13/10/2026
+
+- **Decisão:** todo o texto do corpo passa de 14px para 16px. O **rodapé fica em 14px**, para caber numa linha.
+- **Alternativas:** manter 14px (como no Figma); ou só os textos longos em 16px.
+- **Onde:** `--fs-body` e `--fs-footer` em [`css/tokens.css`](../css/tokens.css); os cartões reservam 4 linhas de 24px (`.card__text`).
+- **Figma:** estilo `Body/Base` e variável `font-size/body` atualizados para 16px (veja [figma-atualizacoes.md](figma-atualizacoes.md)).
+- **Consequência:** as páginas ficam mais altas que no Figma original e as medidas de 08/10 em [design-vs-codigo.md](design-vs-codigo.md) estão desatualizadas.
+
+### D11. Contato por `mailto:` na aba do header; sem página nem formulário — 13/10/2026
+
+- **Decisão:** a aba **Contact** do menu é um link `mailto:` que abre direto o programa de e-mail, **sem abrir uma tela nova**. O botão "Get in touch" em Projects usa o mesmo link. A página `contact.html`, o formulário e `js/contact-form.js` foram removidos (continuam no histórico do Git). Isto **substitui a D6**.
+- **Acessibilidade:** a aba leva um texto só para leitor de tela, "(opens your email app)", para ninguém se surpreender com a troca de programa. A aba não tem estado de "página atual".
+- **Em aberto:** o e-mail real. Hoje os links usam `EMAIL@EXAMPLE.COM` (é preciso trocar antes de publicar; a pessoa que visita vê o endereço, e ele pode receber spam).
+- **Figma:** o frame desktop "Contact" continua no arquivo, mas **está obsoleto**. A aba Contact segue no desenho, agora como link de e-mail.
+- **Se voltar atrás:** `git log` mostra a página; um serviço de formulário seria a alternativa 2 da seção 5.
 
 ## 2. Padrões que adotei (você pode mudar) 🔧
 
@@ -82,7 +94,7 @@ Datas no formato dia/mês/ano. ✅ = decisão sua · 🔧 = padrão que adotei (
 | **Correções de acessibilidade além do Figma**       | Borda dos campos `#17847a`, anel de foco de 2px em `#0d0081`, texto dos campos em 16px, hover do botão, link "Pular para o conteúdo"                            | [design-vs-codigo.md](design-vs-codigo.md), seção 2          |
 | **Onde o Figma era inconsistente, escolhi um lado** | Altura da navegação, ícones das abas, versão do rodapé, tamanho dos rótulos e outros                                                                            | [design-vs-codigo.md](design-vs-codigo.md), seção 3          |
 | **Redimensionamento: um ponto de quebra (640px)**   | Título fluido, cartões em 1 coluna, rótulos e rodapé empilhados, margens de 16px. **Implementado como proposta; aguarda sua aprovação explícita**               | [responsivo.md](responsivo.md)                               |
-| **Texto do corpo em 14px** (em avaliação, seção 6)  | É o que está no Figma (em `rem`). 16px é recomendação, não exigência da WCAG                                                                                    | `--fs-body` em `css/tokens.css`                              |
+| ~~Texto do corpo em 14px~~ (substituído pela D10)   | É o que está no Figma (em `rem`). 16px é recomendação, não exigência da WCAG                                                                                    | `--fs-body` em `css/tokens.css`                              |
 | **Texto da Home: a versão da página**               | "Hello, I’m Lari. I lead designers through change…", e não a variante "Welcome, I’m Lari…"                                                                      | `index.html`                                                 |
 | **Sem Stylelint**                                   | A dependência dele gerava 6 avisos de segurança no `npm audit`, sem correção disponível; o VS Code já valida o CSS                                              | Configuração do projeto                                      |
 | **Ferramentas de qualidade**                        | Prettier com 100 colunas; validador de HTML compatível com o Prettier (aceita `role="list"`); auditoria de acessibilidade própria, com o axe-core, em português | `.prettierrc.json`, `.htmlvalidate.json`, `scripts/a11y.mjs` |
@@ -106,9 +118,9 @@ Atualizado em 13/10/2026, depois da sua revisão da lista.
 
 | Pendência                                                                 | Situação                                                                                               |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| Escolher um modelo de estudo de caso (A, B ou C)                          | Os três estão prontos em `modelos/`. Veja D9                                                           |
-| Como o formulário envia mensagens                                         | Alternativas na seção 5. Falta escolher                                                                |
-| Corpo do texto: 14px ou 16px                                              | Argumentos e comparação na seção 6. Falta escolher                                                     |
+| ~~Escolher um modelo de estudo de caso~~                                  | ✅ Modelo A (D9)                                                                                       |
+| ~~Como o formulário envia mensagens~~                                     | ✅ `mailto:` na aba Contact (D11). Falta o e-mail real                                                 |
+| ~~Corpo do texto: 14px ou 16px~~                                          | ✅ 16px (D10)                                                                                          |
 | Texto final da Home e projetos reais                                      | Você escreve; os modelos servem de roteiro                                                             |
 | ~~Atualizar o Figma (cor do link, borda dos campos, foco, hovers, dock)~~ | ✅ Feito em 13/10/2026: [figma-atualizacoes.md](figma-atualizacoes.md). Falta você conferir            |
 | ~~Desenhar as telas de celular no Figma~~                                 | ✅ Feito em 13/10/2026 (página Mobile (375)), como camadas e não como componentes. Falta você conferir |
@@ -119,7 +131,9 @@ Diga ao Claude o que mudou. Ele atualiza o código, a documentação afetada e e
 
 **Não apague a decisão antiga:** registre a nova com a data e marque a anterior como _substituída_. Assim dá para entender o caminho que o projeto percorreu.
 
-## 5. Análise: como o formulário envia mensagens (D6)
+## 5. Análise (histórico): como o formulário enviaria mensagens
+
+> Resolvida em 13/10/2026 pela **D11** (alternativa 1, `mailto:`). Fica aqui para o caso de você voltar atrás.
 
 Seus critérios: **menor custo** e **acessibilidade**. O site é estático (sem servidor), então enviar uma mensagem exige um serviço de fora ou um link de e-mail.
 
@@ -134,7 +148,9 @@ Seus critérios: **menor custo** e **acessibilidade**. O site é estático (sem 
 
 **Antes de conectar**, o que preciso de você: qual e-mail recebe as mensagens e qual serviço você prefere (posso comparar os planos atuais quando chegar a hora).
 
-## 6. Análise: corpo do texto em 14px ou 16px
+## 6. Análise (histórico): corpo do texto em 14px ou 16px
+
+> Resolvida em 13/10/2026 pela **D10** (16px). As imagens de comparação continuam em `imagens/`.
 
 **Fato importante:** a WCAG **não** exige 16px. Ela exige que o texto possa ser ampliado até 200% sem perder conteúdo, e o site já cumpre isso (tamanhos em `rem`, que respeitam a fonte escolhida no navegador). Então é uma decisão de conforto e de design, não de conformidade.
 
