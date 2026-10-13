@@ -38,7 +38,7 @@ Guia deste projeto, escrito para quem está fazendo um site de ponta a ponta pel
 Marque aqui conforme avançar.
 
 - [x] **0. Preparar o computador** — feito.
-- [ ] **1. Fechar o design no Figma** — **em andamento.** ([arquivo UI-Design](https://www.figma.com/design/kTQyYilEA2rApHxS9cB0Da/UI-Design); [revisão de acessibilidade do design](docs/revisao-do-design.md).) O Figma ainda precisa das telas de celular, do estado de foco, do hover de links e botão, e dos ajustes de cor listados em [docs/design-vs-codigo.md](docs/design-vs-codigo.md). Corrigir contraste no Figma custa minutos; corrigir depois de programado custa horas.
+- [ ] **1. Fechar o design no Figma** — **em andamento.** ([arquivo UI-Design](https://www.figma.com/design/kTQyYilEA2rApHxS9cB0Da/UI-Design); [revisão de acessibilidade do design](docs/revisao-do-design.md).) Em 13/10/2026 o Figma ganhou as telas de celular, os estados de foco e hover e os ajustes de cor ([docs/figma-atualizacoes.md](docs/figma-atualizacoes.md)); falta você conferir. Corrigir contraste no Figma custa minutos; corrigir depois de programado custa horas.
 - [x] **2. Escrever o HTML** — feito: as 4 páginas (Home, About, Projects, Contact), com títulos, listas e landmarks.
 - [x] **3. Estilizar com CSS** — feito: tokens em `css/tokens.css` e layout em `css/styles.css`. O menu do celular é uma dock flutuante no rodapé (escolha sua); falta aprovar o resto do comportamento em telas pequenas ([docs/responsivo.md](docs/responsivo.md)).
 - [x] **4. JavaScript só se for preciso** — feito, com dois scripts pequenos: o aviso do formulário de contato (`js/contact-form.js`) e a detecção de texto muito grande, que devolve o menu do celular para o topo (`js/text-size.js`). O site funciona sem eles.
@@ -67,6 +67,7 @@ Marque aqui conforme avançar.
 
 - [docs/decisoes.md](docs/decisoes.md): o registro das decisões do projeto (o que, quando, por quê e onde), os padrões adotados e as pendências.
 - [docs/revisao-do-design.md](docs/revisao-do-design.md): o que o design tem, tokens, contraste medido e o que ajustar no Figma.
+- [docs/figma-atualizacoes.md](docs/figma-atualizacoes.md): o que mudou no Figma em 13/10/2026 e os limites do que foi feito.
 - [docs/design-vs-codigo.md](docs/design-vs-codigo.md): cada diferença entre o Figma e o código, com o motivo, e como mantê-los alinhados.
 - [docs/responsivo.md](docs/responsivo.md): como o site se adapta a telas pequenas (proposta aguardando aprovação).
 

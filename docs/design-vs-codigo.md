@@ -1,6 +1,6 @@
 # Design × código: onde e por que variam
 
-**Referência:** [UI-Design no Figma](https://www.figma.com/design/kTQyYilEA2rApHxS9cB0Da/UI-Design) · **Medido em:** 08/10/2026 · **Cobertura:** as 4 páginas desktop (1440px). Não existe Figma para mobile, então ali não há o que comparar (veja [responsivo.md](responsivo.md)).
+**Referência:** [UI-Design no Figma](https://www.figma.com/design/kTQyYilEA2rApHxS9cB0Da/UI-Design) · **Medido em:** 08/10/2026 · **Cobertura:** as 4 páginas desktop (1440px). As telas de celular foram desenhadas no Figma em 13/10/2026 **a partir do site** (veja [figma-atualizacoes.md](figma-atualizacoes.md)), então não há o que comparar ali: o código veio primeiro (veja [responsivo.md](responsivo.md)).
 
 > **Ideia central:** o Figma é um desenho num tamanho só; o navegador é um ambiente vivo (telas, fontes, zoom, teclado, leitor de tela). Por isso **sempre vai haver diferença**. O que importa é que cada diferença seja **conhecida, explicada e decidida por você**. Este documento é a lista dessas diferenças.
 
@@ -39,7 +39,7 @@ São mudanças de acessibilidade ou necessidades da web. Para o Figma e o códig
 | 6   | **Hover dos links de texto** | não existe                                            | sublinhado                                                | Idem                                                                                                |
 | 7   | **"Skip to main content"**   | não existe                                            | link visível só quando recebe foco (primeiro Tab)         | WCAG 2.4.1: quem usa teclado pula a navegação                                                       |
 
-Para alinhar: troque o valor da variável `color/text/link`, crie `color/border/input`, desenhe os estados de foco e hover, e atualize o estilo do campo.
+**Alinhado no Figma em 13/10/2026** (itens 1 a 5): variável `color/text/link` trocada, `color/border/input` e `color/focus/ring` criadas, hover do botão em `indigo/700`, campos com texto de 16px, e estados desenhados na página States. O item 6 (sublinhado no hover) e o item 7 (Skip) também estão na página States. Detalhes e limites em [figma-atualizacoes.md](figma-atualizacoes.md).
 
 ## 3. Escolhas que fiz onde o próprio Figma era inconsistente
 
@@ -72,8 +72,8 @@ Em todos estes casos o Figma tinha duas versões ou um detalhe que parece aciden
 
 ## 5. O que o Figma ainda não tem (e eu improvisei)
 
-- **Mobile e tablet:** proposta completa em [responsivo.md](responsivo.md). O **menu do celular** é uma dock flutuante no rodapé da tela (escolha sua, 08/10), com uma faixa no topo como reserva para janelas baixas e texto muito grande. Existe um pequeno script para isso (`js/text-size.js`).
-- **Estados:** foco, hover de botão e link, erro e sucesso do formulário.
+- **Mobile:** agora há telas no Figma (página Mobile (375)), mas desenhadas a partir do código. **Tablet** continua sem desenho. Proposta completa em [responsivo.md](responsivo.md). O **menu do celular** é uma dock flutuante no rodapé da tela (escolha sua, 08/10), com uma faixa no topo como reserva para janelas baixas e texto muito grande. Existe um pequeno script para isso (`js/text-size.js`).
+- **Estados:** foco e hover já estão na página States do Figma; **erro e sucesso do formulário** ainda não existem.
 - **Mensagem ao enviar o formulário:** "This form isn’t connected yet, so nothing was sent."
 - **Título e descrição** de cada página (`<title>`, `<meta description>`), escritos a partir dos textos do Figma.
 - **Favicon, imagem de compartilhamento e página 404.**

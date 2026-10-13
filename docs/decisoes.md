@@ -30,7 +30,7 @@ Datas no formato dia/mês/ano. ✅ = decisão sua · 🔧 = padrão que adotei (
 - **Por quê:** o rosa do Figma (`#d946b0`) dá 3,62:1 sobre o fundo, abaixo do mínimo de 4,5:1. O `#a31585` dá 6,57:1 (5,65:1 no hover) e já era a cor dos ícones, então texto e ícone ficam iguais.
 - **Alternativas:** um rosa mais claro (`#ba2690`), que passa por apenas 0,01 no hover; ou manter `#d946b0`, que reprova.
 - **Onde:** `--color-text-link` em [`css/tokens.css`](../css/tokens.css).
-- **Pendente:** atualizar a variável `color/text/link` no Figma.
+- **Figma:** variável `color/text/link` atualizada em 13/10/2026.
 
 ### D5. Os ícones da janela da Home são decorativos — 08/10/2026
 
@@ -50,7 +50,7 @@ Datas no formato dia/mês/ano. ✅ = decisão sua · 🔧 = padrão que adotei (
 - **Alternativas:** faixa compacta no topo (hoje é a versão de reserva), menu retrô com botão "Menu" (minha recomendação, descartada por você), menu hambúrguer, abas com rolagem horizontal.
 - **Riscos tratados:** conteúdo e foco do teclado nunca ficam escondidos atrás da dock; ela cede lugar a uma faixa no topo em janelas baixas, estreitas ou com texto muito grande. Detalhes e testes em [responsivo.md](responsivo.md).
 - **Onde:** blocos de navegação em [`css/styles.css`](../css/styles.css) e [`js/text-size.js`](../js/text-size.js).
-- **Pendente:** desenhar a dock no Figma.
+- **Figma:** a dock está desenhada na página Mobile (375) desde 13/10/2026.
 
 ### D8. Separar o `larididone` em repositório próprio: ainda não — 08/10/2026
 
@@ -104,14 +104,14 @@ Atualizado em 13/10/2026, depois da sua revisão da lista.
 
 ### Em andamento ou esperando uma escolha sua
 
-| Pendência                                                             | Situação                                                                                 |
-| --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| Escolher um modelo de estudo de caso (A, B ou C)                      | Os três estão prontos em `modelos/`. Veja D9                                             |
-| Como o formulário envia mensagens                                     | Alternativas na seção 5. Falta escolher                                                  |
-| Corpo do texto: 14px ou 16px                                          | Argumentos e comparação na seção 6. Falta escolher                                       |
-| Texto final da Home e projetos reais                                  | Você escreve; os modelos servem de roteiro                                               |
-| Atualizar o Figma (cor do link, borda dos campos, foco, hovers, dock) | Você deu o OK em 13/10/2026; acompanhe em [figma-atualizacoes.md](figma-atualizacoes.md) |
-| Desenhar as telas de celular no Figma                                 | Você deu o OK em 13/10/2026; acompanhe em [figma-atualizacoes.md](figma-atualizacoes.md) |
+| Pendência                                                                 | Situação                                                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Escolher um modelo de estudo de caso (A, B ou C)                          | Os três estão prontos em `modelos/`. Veja D9                                                           |
+| Como o formulário envia mensagens                                         | Alternativas na seção 5. Falta escolher                                                                |
+| Corpo do texto: 14px ou 16px                                              | Argumentos e comparação na seção 6. Falta escolher                                                     |
+| Texto final da Home e projetos reais                                      | Você escreve; os modelos servem de roteiro                                                             |
+| ~~Atualizar o Figma (cor do link, borda dos campos, foco, hovers, dock)~~ | ✅ Feito em 13/10/2026: [figma-atualizacoes.md](figma-atualizacoes.md). Falta você conferir            |
+| ~~Desenhar as telas de celular no Figma~~                                 | ✅ Feito em 13/10/2026 (página Mobile (375)), como camadas e não como componentes. Falta você conferir |
 
 ## 4. Como mudar uma decisão
 
