@@ -13,7 +13,7 @@
 //
 // Atenção: ferramenta automática encontra só uma parte dos problemas. Teclado, leitor de
 // tela, qualidade do texto alternativo e estados de hover/foco pedem teste manual
-// (veja o README).
+// (veja notas/GUIA.md).
 
 import { createServer } from 'node:http';
 import { existsSync } from 'node:fs';
@@ -269,7 +269,7 @@ const regrasComProblema = problemas.size;
 console.log('');
 if (regrasComProblema === 0) {
   console.log(`${verde('✔')} Nenhum problema automático em ${paginas.length} página(s).`);
-  console.log(cinza('  Isso NÃO garante que o site seja acessível: faça também o teste manual (README).'));
+  console.log(cinza('  Isso NÃO garante que o site seja acessível: faça também o teste manual (notas/GUIA.md).'));
 } else {
   console.log(
     `${vermelho('✖')} ${regrasComProblema} problema(s) encontrado(s), afetando ${totalElementos} elemento(s) — ${paginas.length} página(s) testadas em ${TELAS.map((t) => `${t.nome} ${t.largura}px`).join(' e ')}.`,

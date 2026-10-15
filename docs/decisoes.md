@@ -101,7 +101,7 @@ Datas no formato dia/mês/ano. ✅ = decisão sua · 🔧 = padrão que adotei (
 
 | Padrão                                              | Por quê                                                                                                                                                         | Onde                                                         |
 | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
-| **HTML e CSS puros, sem framework**                 | Site leve, acessível por padrão e uma boa base para aprender. Migrar para o Astro só se a repetição de menu e rodapé incomodar                                  | [README](../README.md), seção 2                              |
+| **HTML e CSS puros, sem framework**                 | Site leve, acessível por padrão e uma boa base para aprender. Migrar para o Astro só se a repetição de menu e rodapé incomodar                                  | [Guia privado](../notas/GUIA.md), seção 2                    |
 | **Meta de acessibilidade: WCAG 2.2 nível AA**       | Você disse que acessibilidade é prioridade; AA é o padrão internacional                                                                                         | `npm run check` e teste manual                               |
 | **Fonte Space Grotesk hospedada no site**           | É a fonte do Figma (licença livre, OFL). Sem pedir nada a serviços de terceiros, o que ajuda a privacidade e a velocidade                                       | `assets/fonts/`                                              |
 | **Tokens com os nomes do Figma**                    | Cores, tamanhos e espaços mudam num lugar só                                                                                                                    | [`css/tokens.css`](../css/tokens.css)                        |
@@ -112,7 +112,7 @@ Datas no formato dia/mês/ano. ✅ = decisão sua · 🔧 = padrão que adotei (
 | **Texto da Home: a versão da página**               | "Hello, I’m Lari. I lead designers through change…", e não a variante "Welcome, I’m Lari…"                                                                      | `index.html`                                                 |
 | **Sem Stylelint**                                   | A dependência dele gerava 6 avisos de segurança no `npm audit`, sem correção disponível; o VS Code já valida o CSS                                              | Configuração do projeto                                      |
 | **Ferramentas de qualidade**                        | Prettier com 100 colunas; validador de HTML compatível com o Prettier (aceita `role="list"`); auditoria de acessibilidade própria, com o axe-core, em português | `.prettierrc.json`, `.htmlvalidate.json`, `scripts/a11y.mjs` |
-| **Uma branch por tarefa**                           | A `main` fica estável; o trabalho em andamento fica à parte até estar bom                                                                                       | [README](../README.md), seção 6                              |
+| **Uma branch por tarefa**                           | A `main` fica estável; o trabalho em andamento fica à parte até estar bom                                                                                       | [Guia privado](../notas/GUIA.md), seção 6                    |
 
 ## 3. Pendências ⏳
 
@@ -126,7 +126,7 @@ Atualizado em 13/10/2026, depois da sua revisão da lista.
 | Teste em celular de verdade e com o VoiceOver                                               | Final do projeto       | Principalmente a dock com a barra do Safari embaixo            |
 | ~~Aprovar o resto do redimensionamento (título fluido, cartões, rótulos, rodapé, margens)~~ | ✅ Aprovado (D12)      | Checklist em [responsivo.md](responsivo.md)                    |
 | Separar o repositório                                                                       | Antes de publicar (D8) |                                                                |
-| Imagem de compartilhamento e página 404 (o favicon já existe, D13)                          | Antes de publicar      | Checklist no [README](../README.md), seção 7                   |
+| Imagem de compartilhamento e página 404 (o favicon já existe, D13)                          | Antes de publicar      | Checklist no [Guia privado](../notas/GUIA.md), seção 7         |
 
 ### Em andamento ou esperando uma escolha sua
 
