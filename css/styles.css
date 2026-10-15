@@ -402,6 +402,81 @@ main {
   letter-spacing: -0.0139em;
 }
 
+/* Ilustrações decorativas da home (Figma: Illustration/Corners e Illustration/Arrow).
+   Em telas pequenas ficam em 60% do tamanho e cabem dentro da margem da página, para
+   não criar rolagem horizontal. A partir de 48em usam as posições medidas no quadro
+   "Hero popup": cantos a -43px/-49px da janela e seta a 647px/166px. */
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 43.75rem; /* 700px, igual à janela */
+}
+
+.illustration {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+}
+
+.illustration img {
+  position: absolute;
+  max-width: none;
+}
+
+.illustration--corners {
+  top: -30px;
+  left: -12px;
+  transform: scale(0.6);
+  transform-origin: top left;
+}
+
+.illustration--corners img:nth-child(1) {
+  top: 15.7px;
+  left: 15.47px;
+}
+
+.illustration--corners img:nth-child(2) {
+  top: 12.45px;
+  left: 12.98px;
+}
+
+.illustration--arrow {
+  right: -12px;
+  bottom: -30px;
+  width: 96px;
+  transform: scale(0.6);
+  transform-origin: bottom right;
+}
+
+.illustration--arrow img:nth-child(1) {
+  top: 12.76px;
+  left: 13px;
+}
+
+.illustration--arrow img:nth-child(2) {
+  top: 10.72px;
+  left: 10.88px;
+}
+
+@media (min-width: 48em) {
+  .illustration {
+    transform: none;
+  }
+
+  .illustration--corners {
+    top: -49px;
+    left: -43px;
+  }
+
+  .illustration--arrow {
+    top: 166px;
+    right: auto;
+    bottom: auto;
+    left: 647px;
+  }
+}
+
 /* ============================================================
    COMPONENTE: cartão de projeto (Cases/Card do Figma)
    ============================================================ */
