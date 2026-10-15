@@ -51,7 +51,7 @@ body {
   color: var(--color-text-primary);
   font-family: var(--font-family);
   font-size: var(--fs-body);
-  font-weight: 600; /* estilo Body/Base do Figma: SemiBold */
+  font-weight: 500; /* ≠ FIGMA: lá o Body/Base é SemiBold (600), pesado para ler textos longos; Medium (500) */
   line-height: 1.5;
 }
 
@@ -145,6 +145,9 @@ a:hover {
   justify-content: center;
   gap: var(--space-2);
 }
+
+/* A linha do menu (barra do topo, faixa e dock) tem a cor da borda do painel principal
+   (mint/700), em todos os tamanhos de tela. ≠ FIGMA: lá era mint/200. */
 
 /* Aba de navegação (componente NavTab do Figma) */
 .tab {
@@ -488,12 +491,24 @@ main {
 }
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
   padding: var(--space-4);
   background: var(--color-bg-primary);
   border: 1px solid var(--color-border-default);
+}
+
+/* O cartão inteiro é clicável: o ::after do link cobre o cartão todo. Continua sendo
+   um único link, então o leitor de tela e o Tab não mudam. */
+.card:has(.card__link):hover {
+  border-color: var(--color-text-link);
+}
+
+.card:has(.card__link:focus-visible) {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
 }
 
 /* Ilustração decorativa: a proporção 280×164 do Figma é mantida em qualquer largura */
@@ -503,6 +518,17 @@ main {
   height: auto;
   aspect-ratio: 280 / 164;
   background: var(--color-bg-secondary);
+}
+
+/* Imagem real do caso no lugar da ilustração: preenche o quadro sem distorcer */
+.card__art--photo {
+  object-fit: cover;
+  object-position: top left;
+}
+
+.card__art--contain {
+  object-fit: contain;
+  object-position: center;
 }
 
 .card__art--accent {
@@ -532,6 +558,16 @@ main {
 
 .card__text {
   min-height: 6rem; /* 4 linhas de 24px (no Figma de 14px eram 84px) */
+}
+
+.card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.card__link:focus-visible {
+  outline: none; /* o foco aparece no cartão inteiro (veja .card:has) */
 }
 
 .card__link {
@@ -663,7 +699,7 @@ main {
 @media (width < 40em) {
   .nav {
     width: 100%;
-    border-bottom: 1px solid var(--color-surface-primary);
+    border-bottom: 1px solid var(--mint-700);
   }
 
   .nav__list {
@@ -718,7 +754,7 @@ main {
   }
 
   html:not([data-big-text]) .nav {
-    border: 1px solid var(--color-surface-primary);
+    border: 1px solid var(--mint-700);
     border-radius: 0.5rem; /* o mesmo raio da barra de desktop */
     overflow: hidden; /* a aba da página atual acompanha os cantos arredondados */
   }
@@ -741,7 +777,7 @@ main {
   .nav {
     width: auto;
     padding: var(--space-4);
-    border: 1px solid var(--color-surface-primary);
+    border: 1px solid var(--mint-700);
     border-radius: 0 0 0.5rem 0.5rem;
   }
 

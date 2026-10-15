@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Walmart’s Dispatcher – Multiple trip feature — Lari Didone</title>
+    <meta
+      name="description"
+      content="Case study: a clearer status for Walmart grocery delivery trips with many deliveries, designed for the Dispatcher platform."
+    />
+    <link
+      rel="preload"
+      href="../assets/fonts/space-grotesk-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" href="../favicon.ico" sizes="16x16" />
+    <link rel="stylesheet" href="../css/tokens.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/case-study.css" />
+    <script src="../js/text-size.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="tab tab--smile" href="../index.html">Hi, I’m Lari</a></li>
+          <li>
+            <a class="tab tab--clap" href="../projects.html" aria-current="true">Projects</a>
+          </li>
+          <li><a class="tab tab--smile" href="../about.html">About</a></li>
+          <li>
+            <a class="tab tab--chat" href="mailto:larissadidone@gmail.com"
+              >Contact<span class="visually-hidden"> (opens your email app)</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <div class="panel">
+        <div class="cs-title">
+          <p class="cs-kicker">02 / PRODUCT DESIGN</p>
+          <h1 class="page-title">Walmart’s Dispatcher – Multiple trip feature</h1>
+          <p class="text-lead">
+            A clearer status for grocery delivery trips with many deliveries, so store associates
+            can act on them in real time.
+          </p>
+        </div>
+
+        <dl class="meta meta--strip">
+          <div class="meta__item meta__item--client">
+            <dt>Client</dt>
+            <dd>Walmart (through ArcTouch)</dd>
+          </div>
+          <div class="meta__item meta__item--role">
+            <dt>Role</dt>
+            <dd>Senior Product Designer</dd>
+          </div>
+          <div class="meta__item meta__item--skills">
+            <dt>Skills</dt>
+            <dd>
+              <ul class="skills" role="list">
+                <li>Interaction design</li>
+                <li>Iconography</li>
+                <li>User testing</li>
+                <li>Visual design</li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+
+        <figure class="cs-figure">
+          <img
+            class="cs-figure__art"
+            src="../assets/projects/walmart-dispatcher-status.png"
+            alt="The Dispatcher dashboard listing eight delivery trips. Each row shows the store, time, driver, number of orders and a row of small icons, one for each delivery in the trip, with a line of text such as “Trip in progress - Dropoff ETA 4:42 AM”."
+          />
+          <figcaption>
+            Dashboard exploration: each trip row shows where every delivery in the trip stands.
+          </figcaption>
+        </figure>
+
+        <section class="stack">
+          <h2 class="row__label">Overview</h2>
+          <p>
+            Walmart built Dispatcher, its own platform to see and take action on its grocery
+            deliveries. The main dashboard is where store associates act on trips in real time. My
+            task was the status of trips with more than two deliveries.
+          </p>
+        </section>
+
+        <section class="stack">
+          <h2 class="row__label">The problem</h2>
+          <p>
+            The dashboard needed to give a clear status for trips with more than two deliveries. The
+            goal was for it to keep working with up to ten individual deliveries in a single trip,
+            without the row becoming hard to read.
+          </p>
+        </section>
+
+        <section class="stack">
+          <h2 class="row__label">What I did</h2>
+          <p>
+            I explored ways to show the progress of every delivery inside one trip row. The
+            exploration above uses a row of small icons, one per delivery, that fill in as the trip
+            moves from pickup to drop-off. A line of text says what is happening and when, for
+            example “Trip in progress - Dropoff ETA 4:42 AM” or “At Pick up - 15 min Delay”, and
+            orange marks what needs attention.
+          </p>
+          <p>
+            I tested the explorations with users, then refined the visual design, the behavior of
+            the status and the iconography details.
+          </p>
+        </section>
+
+        <section class="stack">
+          <h2 class="row__label">The outcome</h2>
+          <p>
+            Associates see one row per trip that shows where each delivery stands, without opening
+            the trip. Dispatcher was one of several products I designed for Walmart’s supply chain
+            teams. The same work included the Exception Dashboard (delayed and late deliveries
+            across US regions), Dispatcher Lite (a mobile app so associates can solve problems while
+            the driver is still at the store) and the Load &amp; Deliver app for truck drivers.
+          </p>
+        </section>
+
+        <nav class="cs-pager" aria-label="Case studies">
+          <a href="../projects.html"><span aria-hidden="true">←</span> All projects</a>
+          <a href="quizlet-subject-pages.html"
+            >Next: Quizlet – SEO Subject pages <span aria-hidden="true">→</span></a
+          >
+        </nav>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>2026 Lari Didone</p>
+        <p>Designed on Figma - Coded in VS Code with Claude AI Support</p>
+      </div>
+    </footer>
+  </body>
+</html>
