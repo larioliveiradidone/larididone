@@ -70,12 +70,14 @@ ul {
 
 a {
   color: var(--color-text-link);
-  text-decoration: none;
+  /* o sublinhado existe sempre, mas transparente: assim ele aparece suavemente no hover */
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.2em;
 }
 
 a:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+  text-decoration-color: currentcolor;
 }
 
 /* Foco visível para quem navega pelo teclado (≠ FIGMA: ainda não desenhado) */
@@ -802,5 +804,130 @@ main {
   /* rótulo (145px) + conteúdo, como nos frames do Figma */
   .row {
     grid-template-columns: 9.0625rem minmax(0, 1fr);
+  }
+}
+
+/* ============================================================
+   MOVIMENTO
+   Tudo aqui é leve e rápido, e desligado para quem pede menos movimento no sistema
+   (prefers-reduced-motion). Sem isso, o site continua igual, só que parado.
+   ============================================================ */
+
+/* Efeitos de hover aparecem com fade em vez de acenderem de uma vez */
+a,
+.tab,
+.card,
+.button {
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    text-decoration-color 0.18s ease;
+}
+
+/* Fade-in da página ao trocar de aba. O menu fica parado; só o conteúdo aparece. */
+@keyframes page-in {
+  from {
+    opacity: 0;
+  }
+}
+
+main,
+.site-footer {
+  animation: page-in 0.22s ease-out backwards;
+}
+
+/* Home: o elemento principal flutua devagar */
+@keyframes float {
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.hero {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Home: ao passar o mouse, o texto e a janela "falham" (glitch) em rajadas curtas.
+   A rajada dura 0,3s a cada 2s e só desloca poucos pixels: nada pisca em tela cheia
+   (WCAG 2.3.1). */
+@keyframes glitch-text {
+  0% {
+    text-shadow:
+      2px 0 var(--pink-purple-200),
+      -2px 0 var(--mint-400);
+    transform: translate(-2px, 0);
+  }
+
+  5% {
+    clip-path: inset(10% 0 55% 0);
+    text-shadow:
+      -2px 0 var(--pink-purple-200),
+      2px 0 var(--mint-400);
+    transform: translate(2px, -1px);
+  }
+
+  10% {
+    clip-path: inset(55% 0 10% 0);
+    text-shadow:
+      2px 0 var(--pink-purple-200),
+      -2px 0 var(--mint-400);
+    transform: translate(-1px, 1px);
+  }
+
+  15%,
+  100% {
+    clip-path: none;
+    text-shadow: none;
+    transform: none;
+  }
+}
+
+@keyframes glitch-box {
+  0% {
+    box-shadow:
+      3px 0 0 var(--mint-400),
+      -3px 0 0 var(--pink-purple-200);
+    transform: translate(2px, 0);
+  }
+
+  7% {
+    box-shadow:
+      -3px 0 0 var(--mint-400),
+      3px 0 0 var(--pink-purple-200);
+    transform: translate(-2px, 1px);
+  }
+
+  15%,
+  100% {
+    box-shadow: none;
+    transform: none;
+  }
+}
+
+.hero:hover .window {
+  animation: glitch-box 2s linear infinite;
+}
+
+.hero:hover .window__title,
+.hero:hover .window__lead {
+  animation: glitch-text 2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main,
+  .site-footer,
+  .hero,
+  .hero:hover .window,
+  .hero:hover .window__title,
+  .hero:hover .window__lead {
+    animation: none;
+  }
+
+  a,
+  .tab,
+  .card,
+  .button {
+    transition: none;
   }
 }
