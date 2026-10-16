@@ -176,3 +176,29 @@ img.cs-figure__art {
   flex-direction: column;
   gap: var(--space-1);
 }
+
+/* ---------- Citação de colega (fim do "Outcome") ---------- */
+.cs-quote {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-2) 0 var(--space-2) var(--space-4);
+  border-left: 3px solid var(--pink-purple-500);
+}
+
+.cs-quote blockquote {
+  margin: 0;
+  color: var(--pink-purple-700);
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+}
+
+.cs-quote figcaption {
+  color: var(--color-text-secondary);
+  font-size: var(--fs-label);
+  line-height: 1.5;
+}
+
+.cs-quote figcaption::before {
+  content: "— ";
+}
