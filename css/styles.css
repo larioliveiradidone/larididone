@@ -169,6 +169,11 @@ a:hover {
   background-repeat: no-repeat;
 }
 
+/* Link só com texto, sem ícone nem espaço reservado */
+.tab--text::before {
+  display: none;
+}
+
 .tab:hover {
   background: var(--color-bg-secondary);
   text-decoration: none;
