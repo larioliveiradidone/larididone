@@ -127,6 +127,11 @@
 }
 
 /* ---------- Imagens reais e listas dentro das seções ---------- */
+/* Imagem sobre o mint claro do site (em vez do índigo claro padrão) */
+.cs-figure__art--mint {
+  background: var(--color-bg-primary);
+}
+
 img.cs-figure__art {
   object-fit: contain;
 }
