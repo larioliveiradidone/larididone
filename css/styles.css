@@ -51,7 +51,7 @@ body {
   color: var(--color-text-primary);
   font-family: var(--font-family);
   font-size: var(--fs-body);
-  font-weight: 600; /* estilo Body/Base do Figma: SemiBold */
+  font-weight: 500; /* ≠ FIGMA: lá o Body/Base é SemiBold (600), pesado para ler textos longos; Medium (500) */
   line-height: 1.5;
 }
 
@@ -70,12 +70,14 @@ ul {
 
 a {
   color: var(--color-text-link);
-  text-decoration: none;
+  /* o sublinhado existe sempre, mas transparente: assim ele aparece suavemente no hover */
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.2em;
 }
 
 a:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+  text-decoration-color: currentcolor;
 }
 
 /* Foco visível para quem navega pelo teclado (≠ FIGMA: ainda não desenhado) */
@@ -137,6 +139,9 @@ a:hover {
   justify-content: center;
   gap: var(--space-2);
 }
+
+/* A linha do menu (barra do topo, faixa e dock) tem a cor da borda do painel principal
+   (mint/700), em todos os tamanhos de tela. ≠ FIGMA: lá era mint/200. */
 
 /* Aba de navegação (componente NavTab do Figma) */
 .tab {
@@ -394,6 +399,81 @@ main {
   letter-spacing: -0.0139em;
 }
 
+/* Ilustrações decorativas da home (Figma: Illustration/Corners e Illustration/Arrow).
+   Em telas pequenas ficam em 60% do tamanho e cabem dentro da margem da página, para
+   não criar rolagem horizontal. A partir de 48em usam as posições medidas no quadro
+   "Hero popup": cantos a -43px/-49px da janela e seta a 647px/166px. */
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 43.75rem; /* 700px, igual à janela */
+}
+
+.illustration {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+}
+
+.illustration img {
+  position: absolute;
+  max-width: none;
+}
+
+.illustration--corners {
+  top: -30px;
+  left: -12px;
+  transform: scale(0.6);
+  transform-origin: top left;
+}
+
+.illustration--corners img:nth-child(1) {
+  top: 15.7px;
+  left: 15.47px;
+}
+
+.illustration--corners img:nth-child(2) {
+  top: 12.45px;
+  left: 12.98px;
+}
+
+.illustration--arrow {
+  right: -12px;
+  bottom: -30px;
+  width: 96px;
+  transform: scale(0.6);
+  transform-origin: bottom right;
+}
+
+.illustration--arrow img:nth-child(1) {
+  top: 12.76px;
+  left: 13px;
+}
+
+.illustration--arrow img:nth-child(2) {
+  top: 10.72px;
+  left: 10.88px;
+}
+
+@media (min-width: 48em) {
+  .illustration {
+    transform: none;
+  }
+
+  .illustration--corners {
+    top: -49px;
+    left: -43px;
+  }
+
+  .illustration--arrow {
+    top: 166px;
+    right: auto;
+    bottom: auto;
+    left: 647px;
+  }
+}
+
 /* ============================================================
    COMPONENTE: cartão de projeto (Cases/Card do Figma)
    ============================================================ */
@@ -510,6 +590,7 @@ main {
 }
 
 .card:hover {
+  border-color: var(--color-text-link);
   cursor: pointer;
 }
 
@@ -603,7 +684,7 @@ main {
 @media (width < 40em) {
   .nav {
     width: 100%;
-    border-bottom: 1px solid var(--color-surface-primary);
+    border-bottom: 1px solid var(--mint-700);
   }
 
   .nav__list {
@@ -658,7 +739,7 @@ main {
   }
 
   html:not([data-big-text]) .nav {
-    border: 1px solid var(--color-surface-primary);
+    border: 1px solid var(--mint-700);
     border-radius: 0.5rem; /* o mesmo raio da barra de desktop */
     overflow: hidden; /* a aba da página atual acompanha os cantos arredondados */
   }
@@ -681,7 +762,7 @@ main {
   .nav {
     width: auto;
     padding: var(--space-4);
-    border: 1px solid var(--color-surface-primary);
+    border: 1px solid var(--mint-700);
     border-radius: 0 0 0.5rem 0.5rem;
   }
 
@@ -706,5 +787,250 @@ main {
   /* rótulo (145px) + conteúdo, como nos frames do Figma */
   .row {
     grid-template-columns: 9.0625rem minmax(0, 1fr);
+  }
+}
+
+/* ============================================================
+   HOME: janelas pequenas ao redor da janela principal
+   Em telas estreitas elas ficam numa fileira embaixo; a partir de 75em elas
+   se espalham ao redor da janela principal, cada uma de um tamanho.
+   ============================================================ */
+.home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  width: 100%;
+  max-width: 43.75rem; /* 700px, igual à janela principal */
+}
+
+.minis {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.window--mini {
+  width: min(100%, 11rem);
+  font-size: var(--fs-label);
+  line-height: 1.5;
+}
+
+.window--computer {
+  width: min(100%, 10.5rem); /* 168px */
+}
+
+.window--years {
+  width: min(100%, 11rem); /* 176px */
+}
+
+.window--role {
+  width: min(100%, 12.5rem); /* 200px */
+}
+
+.window__mini-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+/* Pixel art: pixels nítidos, sem suavização */
+.window__body--art {
+  display: grid;
+  place-items: center;
+  padding-block: var(--space-4);
+}
+
+.window__body--art img {
+  display: block;
+  width: 8rem; /* 128px: cada pixel da arte tem 8px */
+  height: auto;
+  image-rendering: pixelated;
+}
+
+/* Celular: duas janelas pequenas por fileira, para a Home não ficar comprida demais */
+@media (width < 40em) {
+  .window--mini,
+  .window--computer,
+  .window--years,
+  .window--role {
+    width: calc(50% - var(--space-2));
+  }
+
+  .window__body--art img {
+    width: 6rem;
+  }
+}
+
+@media (min-width: 75em) {
+  .minis {
+    display: contents;
+  }
+
+  .window--mini {
+    position: absolute;
+  }
+
+  .window--years {
+    top: -40px;
+    right: calc(100% + 56px);
+  }
+
+  .window--computer {
+    top: 130px;
+    right: calc(100% + 56px);
+  }
+
+  .window--role {
+    top: -40px;
+    left: calc(100% + 48px);
+  }
+}
+
+/* ============================================================
+   MOVIMENTO
+   Tudo aqui é leve e rápido, e desligado para quem pede menos movimento no sistema
+   (prefers-reduced-motion). Sem isso, o site continua igual, só que parado.
+   ============================================================ */
+
+/* Efeitos de hover aparecem com fade em vez de acenderem de uma vez */
+a,
+.tab,
+.card,
+.button {
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    text-decoration-color 0.18s ease;
+}
+
+/* Fade-in da página ao trocar de aba. O menu fica parado; só o conteúdo aparece. */
+@keyframes page-in {
+  from {
+    opacity: 0;
+  }
+}
+
+main,
+.site-footer {
+  animation: page-in 0.22s ease-out backwards;
+}
+
+/* Home: o elemento principal flutua devagar */
+@keyframes float {
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.hero {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Home: ao passar o mouse, o texto e a janela "falham" (glitch) em rajadas curtas.
+   A rajada dura 0,3s a cada 2s e só desloca poucos pixels: nada pisca em tela cheia
+   (WCAG 2.3.1). */
+@keyframes glitch-text {
+  0% {
+    text-shadow:
+      2px 0 var(--pink-purple-200),
+      -2px 0 var(--mint-400);
+    transform: translate(-2px, 0);
+  }
+
+  5% {
+    clip-path: inset(10% 0 55% 0);
+    text-shadow:
+      -2px 0 var(--pink-purple-200),
+      2px 0 var(--mint-400);
+    transform: translate(2px, -1px);
+  }
+
+  10% {
+    clip-path: inset(55% 0 10% 0);
+    text-shadow:
+      2px 0 var(--pink-purple-200),
+      -2px 0 var(--mint-400);
+    transform: translate(-1px, 1px);
+  }
+
+  15%,
+  100% {
+    clip-path: none;
+    text-shadow: none;
+    transform: none;
+  }
+}
+
+@keyframes glitch-box {
+  0% {
+    box-shadow:
+      3px 0 0 var(--mint-400),
+      -3px 0 0 var(--pink-purple-200);
+    transform: translate(2px, 0);
+  }
+
+  7% {
+    box-shadow:
+      -3px 0 0 var(--mint-400),
+      3px 0 0 var(--pink-purple-200);
+    transform: translate(-2px, 1px);
+  }
+
+  15%,
+  100% {
+    box-shadow: none;
+    transform: none;
+  }
+}
+
+.hero:hover .window,
+.window--mini:hover {
+  animation: glitch-box 2s linear infinite;
+}
+
+.hero:hover .window__title,
+.hero:hover .window__lead,
+.window--mini:hover .window__mini-title {
+  animation: glitch-text 2s linear infinite;
+}
+
+/* As janelas pequenas flutuam em ritmos diferentes */
+.window--computer {
+  animation: float 7s ease-in-out -2s infinite;
+}
+
+.window--years {
+  animation: float 5s ease-in-out -1s infinite;
+}
+
+.window--role {
+  animation: float 6.5s ease-in-out -4s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main,
+  .site-footer,
+  .hero,
+  .hero:hover .window,
+  .hero:hover .window__title,
+  .hero:hover .window__lead,
+  .window--mini,
+  .window--mini:hover,
+  .window--mini:hover .window__mini-title {
+    animation: none;
+  }
+
+  a,
+  .tab,
+  .card,
+  .button {
+    transition: none;
   }
 }

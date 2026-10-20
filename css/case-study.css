@@ -125,3 +125,80 @@
 .meta__item--year {
   --icon: url("../assets/icons/ph-year.svg");
 }
+
+/* ---------- Imagens reais e listas dentro das seções ---------- */
+img.cs-figure__art {
+  object-fit: contain;
+}
+
+.cs-list {
+  display: grid;
+  gap: var(--space-2);
+  padding-left: var(--space-6);
+  list-style: disc;
+}
+
+/* ---------- Números em destaque (caso de liderança) ---------- */
+.cs-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  gap: var(--space-4);
+  margin: 0;
+}
+
+.cs-stat {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: var(--space-1);
+  padding: var(--space-4);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-default);
+}
+
+.cs-stat dt {
+  color: var(--color-text-secondary);
+  font-size: var(--fs-label);
+  line-height: 1.5;
+}
+
+.cs-stat dd {
+  margin: 0;
+  color: var(--pink-purple-700);
+  font-size: var(--fs-hero);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1667;
+}
+
+/* Habilidades da ficha: uma embaixo da outra, em qualquer largura */
+.meta .skills {
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+/* ---------- Citação de colega (fim do "Outcome") ---------- */
+.cs-quote {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-2) 0 var(--space-2) var(--space-4);
+  border-left: 3px solid var(--pink-purple-500);
+}
+
+.cs-quote blockquote {
+  margin: 0;
+  color: var(--pink-purple-700);
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+}
+
+.cs-quote figcaption {
+  color: var(--color-text-secondary);
+  font-size: var(--fs-label);
+  line-height: 1.5;
+}
+
+.cs-quote figcaption::before {
+  content: "— ";
+}
