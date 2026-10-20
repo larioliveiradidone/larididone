@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 171" width="280" height="171" fill="none" stroke-linejoin="round" stroke-linecap="round">
+  <defs>
+    <!-- Mão aberta apontando para cima; o pulso fica em (0,0) -->
+    <g id="hand" stroke="#07004d" stroke-width="2.5">
+      <rect x="-15" y="-34" width="7" height="30" rx="3.5" fill="var(--skin)"/>
+      <rect x="-7" y="-42" width="7" height="38" rx="3.5" fill="var(--skin)"/>
+      <rect x="1" y="-40" width="7" height="36" rx="3.5" fill="var(--skin)"/>
+      <rect x="9" y="-32" width="7" height="28" rx="3.5" fill="var(--skin)"/>
+      <rect x="-22" y="-8" width="10" height="24" rx="5" transform="rotate(-35 -17 4)" fill="var(--skin)"/>
+      <rect x="-16" y="-14" width="32" height="38" rx="10" fill="var(--skin)"/>
+      <rect x="-17" y="22" width="34" height="26" rx="6" fill="var(--sleeve)"/>
+    </g>
+  </defs>
+  <!-- fundo -->
+  <ellipse cx="140" cy="86" rx="100" ry="74" fill="#e8e5f7"/>
+  <ellipse cx="140" cy="160" rx="84" ry="5" fill="#abf5ed"/>
+
+  <!-- brilhos do high five -->
+  <g stroke="#a31585" stroke-width="3">
+    <path d="M140 52v-12M124 58l-8-8M156 58l8-8"/>
+  </g>
+
+  <!-- mãos -->
+  <g style="--skin:#e88fcd;--sleeve:#0d0081" transform="translate(121 108) rotate(22)"><use href="#hand"/></g>
+  <g style="--skin:#d9a066;--sleeve:#17847a" transform="translate(159 108) scale(-1 1) rotate(22)"><use href="#hand"/></g>
+
+  <!-- lápis voando -->
+  <g transform="translate(46 44) rotate(-35)" stroke="#07004d" stroke-width="2.5">
+    <rect x="-26" y="-6" width="10" height="12" rx="3" fill="#e88fcd"/>
+    <rect x="-18" y="-6" width="6" height="12" fill="#e8e5f7"/>
+    <rect x="-14" y="-6" width="34" height="12" fill="#abf5ed"/>
+    <path d="M20 -6l14 6-14 6z" fill="#fbe8f6"/>
+    <path d="M30 -2l4 2-4 2z" fill="#07004d"/>
+  </g>
+  <path d="M18 72q-6 6-2 14M26 78q-4 4-1 10" stroke="#0d0081" stroke-width="2.5"/>
+
+  <!-- notas -->
+  <g transform="translate(228 36) rotate(12)" stroke="#07004d" stroke-width="2.5">
+    <rect x="-17" y="-17" width="34" height="34" rx="3" fill="#abf5ed"/>
+    <path d="M-10 -7h20M-10 0h20M-10 7h12" stroke-width="2"/>
+  </g>
+  <g transform="translate(40 120) rotate(-12)" stroke="#07004d" stroke-width="2.5">
+    <rect x="-15" y="-15" width="30" height="30" rx="3" fill="#fbe8f6"/>
+    <path d="M-8 -5h16M-8 3h10" stroke-width="2"/>
+  </g>
+
+  <!-- mouse voando, com o fio solto -->
+  <g transform="translate(232 112) rotate(18)" stroke="#07004d" stroke-width="2.5">
+    <path d="M0 -14q-3 -14 -16 -22q-8 -4 -10 4" stroke="#0d0081"/>
+    <rect x="-12" y="-14" width="24" height="34" rx="12" fill="#e8fcfa"/>
+    <path d="M-12 0h24M0 -14v14"/>
+    <rect x="-12" y="-14" width="12" height="14" rx="6" fill="#a31585" stroke-width="0" opacity=".25"/>
+  </g>
+
+  <!-- movimento -->
+  <g stroke="#0d0081" stroke-width="2.5">
+    <path d="M196 20l8 -6M206 62l10 -2M62 78l-8 -2"/>
+  </g>
+</svg>

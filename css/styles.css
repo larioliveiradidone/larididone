@@ -100,14 +100,6 @@ a:hover {
   border: 0;
 }
 
-/* Sprite SVG escondido (as ilustrações dos cartões usam <use>) */
-.svg-sprite {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-}
-
 /* "Pular para o conteúdo": só aparece quando recebe foco (≠ FIGMA: elemento novo) */
 .skip-link {
   position: absolute;
@@ -413,96 +405,119 @@ main {
 }
 
 .card {
+  position: relative; /* âncora do link que cobre o cartão inteiro */
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
-  padding: var(--space-4);
+  gap: var(--space-6);
+  padding: var(--space-6) var(--space-4) var(--space-4);
   background: var(--color-bg-primary);
-  border: 1px solid var(--color-border-default);
+  border: 1px solid var(--pink-purple-500); /* Figma: color/interactive/accent */
 }
 
-/* Ilustração decorativa: a proporção 280×164 do Figma é mantida em qualquer largura */
-.card__art {
+/* Capa do projeto (Figma: 280×171). Mantém a proporção em qualquer largura. */
+.card__cover {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 280 / 164;
-  background: var(--color-bg-secondary);
+  aspect-ratio: 280 / 171;
+  object-fit: contain;
 }
 
-.card__art--accent {
-  background: var(--color-bg-accent);
+/* Ao passar o mouse (ou focar o link do cartão), a capa "falha" por meio segundo:
+   deslocamentos curtos e um leve desvio de cor. Não roda para quem pediu menos movimento. */
+@media (prefers-reduced-motion: no-preference) {
+  .card:hover .card__cover,
+  .card:focus-within .card__cover {
+    animation: cover-glitch 0.45s steps(1, end) 1;
+  }
 }
 
-.card__art--surface {
-  background: var(--color-surface-primary);
+@keyframes cover-glitch {
+  0% {
+    transform: translate(-2px, 0);
+    filter: drop-shadow(2px 0 0 var(--pink-purple-200)) drop-shadow(-2px 0 0 var(--mint-400));
+    clip-path: inset(0 0 55% 0);
+  }
+  20% {
+    transform: translate(2px, 1px);
+    filter: drop-shadow(-2px 0 0 var(--pink-purple-200)) drop-shadow(2px 0 0 var(--mint-400));
+    clip-path: inset(40% 0 0 0);
+  }
+  40% {
+    transform: translate(-1px, -1px);
+    filter: drop-shadow(1px 0 0 var(--pink-purple-200)) drop-shadow(-1px 0 0 var(--mint-400));
+    clip-path: none;
+  }
+  60% {
+    transform: translate(3px, 0);
+    filter: drop-shadow(-3px 0 0 var(--pink-purple-200));
+    clip-path: inset(20% 0 35% 0);
+  }
+  80% {
+    transform: translate(-1px, 1px);
+    filter: drop-shadow(2px 0 0 var(--mint-400));
+    clip-path: none;
+  }
+  100% {
+    transform: none;
+    filter: none;
+    clip-path: none;
+  }
+}
+
+.card__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
 }
 
 .card__type {
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   font-size: var(--fs-small);
   font-weight: 500;
   line-height: 1.75rem;
 }
 
-/* No Figma o título reserva 2 linhas (60px) e a descrição 4 linhas (84px).
-   Aqui são ALTURAS MÍNIMAS: o espaço é mantido, mas o texto pode crescer. */
 .card__title {
-  min-height: 3.75rem;
-  color: var(--indigo-500);
+  color: var(--color-text-link);
   font-size: var(--fs-card-title);
   font-weight: 500;
   line-height: 1.3636;
 }
 
 .card__text {
-  min-height: 6rem; /* 4 linhas de 24px (no Figma de 14px eram 84px) */
+  font-weight: 700;
+}
+
+/* Link alinhado à direita, como no Figma */
+/* O cartão inteiro é clicável: o ::after do link se estende por todo o cartão.
+   Continua sendo um único link para leitores de tela e para o Tab. */
+.card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+/* O anel de foco contorna o cartão, não só o texto do link */
+.card__link:focus-visible {
+  outline: none;
+}
+
+.card__link:focus-visible::after {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.card:hover {
+  cursor: pointer;
 }
 
 .card__link {
+  align-self: flex-end;
   font-size: var(--fs-label);
   font-weight: 500;
   line-height: 1.75rem;
-}
-
-.card__note {
-  color: var(--color-text-secondary);
-  font-size: var(--fs-small);
-  font-weight: 400;
-  line-height: 1.75rem;
-}
-
-/* Peças da ilustração (cores = tokens do Figma) */
-.art-panel {
-  fill: var(--color-bg-primary);
-}
-
-.art-rail {
-  fill: var(--indigo-500);
-}
-
-.art-heading {
-  fill: var(--color-text-primary);
-}
-
-.art-line {
-  fill: var(--mint-600);
-}
-
-.art-mint {
-  fill: var(--mint-200);
-}
-
-.art-pink {
-  fill: var(--pink-purple-200);
-}
-
-.art-action {
-  fill: var(--pink-purple-500);
-}
-
-.art-row {
-  fill: var(--indigo-50);
 }
 
 /* ============================================================
